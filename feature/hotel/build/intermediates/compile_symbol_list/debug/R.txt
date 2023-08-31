@@ -1,0 +1,1 @@
+int layout fragment_hotel 0x0

@@ -1,0 +1,2 @@
+com.example.mikailovhotel.feature.hotel
+layout fragment_hotel

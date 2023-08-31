@@ -1,0 +1,2 @@
+com.example.mikailovhotel.component.navigation
+id globalHost
