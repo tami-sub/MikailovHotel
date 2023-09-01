@@ -5,10 +5,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.denzcoskun.imageslider.models.SlideModel
 import com.example.mikailovhotel.shared.core.domain.usecase.GetHotelUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.net.UnknownHostException
 import javax.inject.Inject
 
@@ -26,9 +28,11 @@ class HotelViewModel @Inject constructor(private val hotelUseCase: GetHotelUseCa
 
     fun getHotel() {
         viewModelScope.launch(Dispatchers.IO) {
-            hotelUseCase.invoke().onSuccess {
-                with(Dispatchers.Main) {
-                    Log.d("hohma", it.name)
+            hotelUseCase.invoke().onSuccess { hotel ->
+                val imageList = ArrayList<SlideModel>()
+                hotel.imageUrls.mapTo(imageList) { SlideModel(it) }
+                withContext(Dispatchers.Main) {
+                    _state.value = HotelState.Success(hotel, imageList)
                 }
 
             }.onFailure {

@@ -12,7 +12,7 @@ public final class Hotel {
     private final java.lang.String address = null;
     private final int id = 0;
     @org.jetbrains.annotations.NotNull
-    @com.google.gson.annotations.SerializedName(value = "@SerializedName(\"\")")
+    @com.google.gson.annotations.SerializedName(value = "image_urls")
     private final java.util.List<java.lang.String> imageUrls = null;
     @com.google.gson.annotations.SerializedName(value = "minimal_price")
     private final int minimalPrice = 0;

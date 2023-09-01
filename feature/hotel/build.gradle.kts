@@ -60,6 +60,9 @@ dependencies {
     kapt ("com.google.dagger:dagger-compiler:2.44")
     kapt ("com.google.dagger:dagger-android-processor:2.44")
 
+    //
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
+
     //modules
     implementation(project(":shared:core"))
     implementation(project(":component:navigation"))

@@ -1,4 +1,10 @@
 R_DEF: Internal format may change without notice
 local
+drawable initial_layout_background
+id address
+id golden_score
+id image_slider
+id name
+id price
 layout fragment_hotel
 string hotel

@@ -1,1 +1,15 @@
 com.example.mikailovhotel.shared.core
+color background_fragment_color
+color black
+color golden_box_color
+color golden_text
+color white
+drawable golden_box
+style address
+style colorful_plain_text
+style custom_title
+style golden_text
+style nested_horizontal_info_text
+style pale_plain_text
+style text
+style upper_case_price
