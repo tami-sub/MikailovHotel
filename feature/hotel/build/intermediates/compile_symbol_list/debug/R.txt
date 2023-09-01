@@ -1,1 +1,2 @@
 int layout fragment_hotel 0x0
+int string hotel 0x0
