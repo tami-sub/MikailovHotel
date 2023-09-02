@@ -10,6 +10,7 @@
     <string name="most_necessary">Самое необходимое</string>
     <string name="name">Name</string>
     <string name="price">Price</string>
+    <string name="price_placeholder">От %1$s ₽</string>
     <string name="to_choose_room">К выбору номера</string>
     <string name="tour_with_flight">за тур с перелётом</string>
 </resources>

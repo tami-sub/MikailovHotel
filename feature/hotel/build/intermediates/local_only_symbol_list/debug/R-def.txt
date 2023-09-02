@@ -40,5 +40,6 @@ string included
 string most_necessary
 string name
 string price
+string price_placeholder
 string to_choose_room
 string tour_with_flight

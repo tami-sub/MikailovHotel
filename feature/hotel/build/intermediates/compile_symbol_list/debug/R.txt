@@ -38,5 +38,6 @@ int string included 0x0
 int string most_necessary 0x0
 int string name 0x0
 int string price 0x0
+int string price_placeholder 0x0
 int string to_choose_room 0x0
 int string tour_with_flight 0x0

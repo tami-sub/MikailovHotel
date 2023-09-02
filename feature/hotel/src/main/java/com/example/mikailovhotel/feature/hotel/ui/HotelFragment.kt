@@ -63,7 +63,7 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
                 address.text = state.hotel.address
 
                 price.text = getString(
-                    com.example.mikailovhotel.shared.core.R.string.price,
+                    R.string.price_placeholder,
                     String.format(Locale.FRANCE, "%,d", state.hotel.minimalPrice)
                 )
                 description.text = state.hotel.aboutTheHotel.description
