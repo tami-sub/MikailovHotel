@@ -7,20 +7,24 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.example.mikailovhotel.feature.hotel.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentHotelBinding implements ViewBinding {
   @NonNull
-  private final NestedScrollView rootView;
+  private final SwipeRefreshLayout rootView;
+
+  @NonNull
+  public final TextView aboutHotel;
 
   @NonNull
   public final TextView address;
@@ -30,6 +34,9 @@ public final class FragmentHotelBinding implements ViewBinding {
 
   @NonNull
   public final TextView amenitiesSupportText;
+
+  @NonNull
+  public final MaterialButton applyButton;
 
   @NonNull
   public final TextView description;
@@ -56,32 +63,49 @@ public final class FragmentHotelBinding implements ViewBinding {
   public final TextView includedSupportText;
 
   @NonNull
+  public final View initialHotelLayoutBackground;
+
+  @NonNull
   public final TextView name;
 
   @NonNull
   public final TextView price;
 
   @NonNull
+  public final LinearProgressIndicator progressBar;
+
+  @NonNull
   public final RecyclerView recyclerViewHotel;
+
+  @NonNull
+  public final View secondHotelLayoutBackground;
 
   @NonNull
   public final View secondSeparator;
 
   @NonNull
-  public final TextView textView2;
+  public final SwipeRefreshLayout swipeRefreshLayout;
 
-  private FragmentHotelBinding(@NonNull NestedScrollView rootView, @NonNull TextView address,
-      @NonNull MaterialButton amenities, @NonNull TextView amenitiesSupportText,
+  @NonNull
+  public final View thirdHotelLayoutBackground;
+
+  private FragmentHotelBinding(@NonNull SwipeRefreshLayout rootView, @NonNull TextView aboutHotel,
+      @NonNull TextView address, @NonNull MaterialButton amenities,
+      @NonNull TextView amenitiesSupportText, @NonNull MaterialButton applyButton,
       @NonNull TextView description, @NonNull MaterialButton excluded,
       @NonNull TextView excludedSupportText, @NonNull View firstSeparator,
       @NonNull TextView goldenScore, @NonNull ImageSlider imageSlider,
       @NonNull MaterialButton included, @NonNull TextView includedSupportText,
-      @NonNull TextView name, @NonNull TextView price, @NonNull RecyclerView recyclerViewHotel,
-      @NonNull View secondSeparator, @NonNull TextView textView2) {
+      @NonNull View initialHotelLayoutBackground, @NonNull TextView name, @NonNull TextView price,
+      @NonNull LinearProgressIndicator progressBar, @NonNull RecyclerView recyclerViewHotel,
+      @NonNull View secondHotelLayoutBackground, @NonNull View secondSeparator,
+      @NonNull SwipeRefreshLayout swipeRefreshLayout, @NonNull View thirdHotelLayoutBackground) {
     this.rootView = rootView;
+    this.aboutHotel = aboutHotel;
     this.address = address;
     this.amenities = amenities;
     this.amenitiesSupportText = amenitiesSupportText;
+    this.applyButton = applyButton;
     this.description = description;
     this.excluded = excluded;
     this.excludedSupportText = excludedSupportText;
@@ -90,16 +114,20 @@ public final class FragmentHotelBinding implements ViewBinding {
     this.imageSlider = imageSlider;
     this.included = included;
     this.includedSupportText = includedSupportText;
+    this.initialHotelLayoutBackground = initialHotelLayoutBackground;
     this.name = name;
     this.price = price;
+    this.progressBar = progressBar;
     this.recyclerViewHotel = recyclerViewHotel;
+    this.secondHotelLayoutBackground = secondHotelLayoutBackground;
     this.secondSeparator = secondSeparator;
-    this.textView2 = textView2;
+    this.swipeRefreshLayout = swipeRefreshLayout;
+    this.thirdHotelLayoutBackground = thirdHotelLayoutBackground;
   }
 
   @Override
   @NonNull
-  public NestedScrollView getRoot() {
+  public SwipeRefreshLayout getRoot() {
     return rootView;
   }
 
@@ -124,6 +152,12 @@ public final class FragmentHotelBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.about_hotel;
+      TextView aboutHotel = ViewBindings.findChildViewById(rootView, id);
+      if (aboutHotel == null) {
+        break missingId;
+      }
+
       id = R.id.address;
       TextView address = ViewBindings.findChildViewById(rootView, id);
       if (address == null) {
@@ -139,6 +173,12 @@ public final class FragmentHotelBinding implements ViewBinding {
       id = R.id.amenities_support_text;
       TextView amenitiesSupportText = ViewBindings.findChildViewById(rootView, id);
       if (amenitiesSupportText == null) {
+        break missingId;
+      }
+
+      id = R.id.apply_button;
+      MaterialButton applyButton = ViewBindings.findChildViewById(rootView, id);
+      if (applyButton == null) {
         break missingId;
       }
 
@@ -190,6 +230,12 @@ public final class FragmentHotelBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.initial_hotel_layout_background;
+      View initialHotelLayoutBackground = ViewBindings.findChildViewById(rootView, id);
+      if (initialHotelLayoutBackground == null) {
+        break missingId;
+      }
+
       id = R.id.name;
       TextView name = ViewBindings.findChildViewById(rootView, id);
       if (name == null) {
@@ -202,9 +248,21 @@ public final class FragmentHotelBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progress_bar;
+      LinearProgressIndicator progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.recycler_view_hotel;
       RecyclerView recyclerViewHotel = ViewBindings.findChildViewById(rootView, id);
       if (recyclerViewHotel == null) {
+        break missingId;
+      }
+
+      id = R.id.second_hotel_layout_background;
+      View secondHotelLayoutBackground = ViewBindings.findChildViewById(rootView, id);
+      if (secondHotelLayoutBackground == null) {
         break missingId;
       }
 
@@ -214,16 +272,20 @@ public final class FragmentHotelBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
+      SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) rootView;
+
+      id = R.id.third_hotel_layout_background;
+      View thirdHotelLayoutBackground = ViewBindings.findChildViewById(rootView, id);
+      if (thirdHotelLayoutBackground == null) {
         break missingId;
       }
 
-      return new FragmentHotelBinding((NestedScrollView) rootView, address, amenities,
-          amenitiesSupportText, description, excluded, excludedSupportText, firstSeparator,
-          goldenScore, imageSlider, included, includedSupportText, name, price, recyclerViewHotel,
-          secondSeparator, textView2);
+      return new FragmentHotelBinding((SwipeRefreshLayout) rootView, aboutHotel, address, amenities,
+          amenitiesSupportText, applyButton, description, excluded, excludedSupportText,
+          firstSeparator, goldenScore, imageSlider, included, includedSupportText,
+          initialHotelLayoutBackground, name, price, progressBar, recyclerViewHotel,
+          secondHotelLayoutBackground, secondSeparator, swipeRefreshLayout,
+          thirdHotelLayoutBackground);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

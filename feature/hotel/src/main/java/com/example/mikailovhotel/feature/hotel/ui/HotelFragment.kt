@@ -32,15 +32,54 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.hotel)
         viewModel.state.observe(viewLifecycleOwner) {
-            when (it) {
-                is HotelState.Loading -> {}
-                is HotelState.Success -> {
-                    binding.imageSlider.setImageList(it.imageList, ScaleTypes.FIT)
-                    showRecyclerView(it.hotel.aboutTheHotel.peculiarities)
-                }
-                is HotelState.Error -> {}
-                is HotelState.Clear -> {}
+            renderState(it)
+        }
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            viewModel.getHotelInfo()
+            binding.swipeRefreshLayout.isRefreshing = false
+        }
+    }
+
+    private fun renderState(state: HotelState) = with(binding) {
+        when (state) {
+            is HotelState.Loading -> {
+                progressBar.visibility = View.VISIBLE
+                dismissErrorSnackBar()
             }
+
+            is HotelState.Success -> {
+                progressBar.visibility = View.GONE
+                imageSlider.setImageList(state.imageList, ScaleTypes.FIT)
+                showRecyclerView(state.hotel.aboutTheHotel.peculiarities)
+                applyButton.isEnabled = true
+                goldenScore.text = getString(
+                    com.example.mikailovhotel.shared.core.R.string.golden_score,
+                    state.hotel.rating,
+                    state.hotel.ratingName
+                )
+                name.text = state.hotel.name
+                address.text = state.hotel.address
+
+                price.text = getString(
+                    com.example.mikailovhotel.shared.core.R.string.price,
+                    formatNumberWithSpaces(state.hotel.minimalPrice)
+                )
+                description.text = state.hotel.aboutTheHotel.description
+
+            }
+
+            is HotelState.Error -> {
+                progressBar.visibility = View.GONE
+                state.exception.message?.let {
+                    this@HotelFragment.showErrorSnackbar(it) {
+                        viewModel.getHotelInfo()
+                    }
+                }
+                applyButton.isEnabled = false
+            }
+
+            is HotelState.Clear -> {}
         }
     }
 
@@ -56,6 +95,20 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
             this.layoutManager =
                 StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL)
         }
+    }
+
+    private fun formatNumberWithSpaces(number: Int): String {
+        val numberStr = number.toString()
+        val formattedNumber = StringBuilder()
+
+        for ((index, char) in numberStr.reversed().withIndex()) {
+            if (index > 0 && (index % 2 == 0)) {
+                formattedNumber.append(' ')
+            }
+            formattedNumber.append(char)
+        }
+
+        return formattedNumber.reverse().toString()
     }
 
 }

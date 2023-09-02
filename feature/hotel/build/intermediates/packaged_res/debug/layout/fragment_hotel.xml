@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.HotelFragment">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="true"
-        android:orientation="vertical"
-        tools:context=".ui.HotelFragment">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            android:background="@drawable/initial_layout_background">
+            android:nestedScrollingEnabled="true">
+
+            <View
+                android:id="@+id/initial_hotel_layout_background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="-16dp"
+                android:background="@drawable/initial_layout_background"
+                app:layout_constraintBottom_toBottomOf="@+id/price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.denzcoskun.imageslider.ImageSlider
                 android:id="@+id/image_slider"
@@ -37,7 +47,6 @@
                 android:layout_marginTop="21dp"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="★ 5 Превосходно"
                 app:layout_constraintStart_toStartOf="@+id/image_slider"
                 app:layout_constraintTop_toBottomOf="@+id/image_slider" />
 
@@ -47,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
-                android:text="Steigenberger Makadi"
+                android:text="Name"
                 app:layout_constraintStart_toStartOf="@+id/golden_score"
                 app:layout_constraintTop_toBottomOf="@+id/golden_score" />
 
@@ -57,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Madinat Makadi, Safaga Road, Makadi Bay, Египет"
+                android:text="Address"
                 app:layout_constraintStart_toStartOf="@+id/name"
                 app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -67,8 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
-                android:text="от 134 673 ₽"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Price"
                 app:layout_constraintStart_toStartOf="@+id/address"
                 app:layout_constraintTop_toBottomOf="@+id/address" />
 
@@ -77,28 +85,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="за тур с перелётом"
+                android:text="@string/tour_with_flight"
                 app:layout_constraintBaseline_toBaselineOf="@id/price"
                 app:layout_constraintBottom_toBottomOf="@+id/price"
                 app:layout_constraintStart_toEndOf="@id/price" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/layout_background">
+            <View
+                android:id="@+id/second_hotel_layout_background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="-16dp"
+                android:background="@drawable/layout_background"
+                app:layout_constraintBottom_toBottomOf="@id/excluded"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/initial_hotel_layout_background" />
+
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/about_hotel"
                 style="@style/custom_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Об отеле"
+                android:text="@string/about_hotel"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/second_hotel_layout_background" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view_hotel"
@@ -110,14 +125,14 @@
                 app:layout_constraintBottom_toTopOf="@+id/description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/about_hotel" />
 
             <TextView
                 android:id="@+id/description"
                 style="@style/colorful_plain_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!"
+                android:text="Description"
                 app:layout_constraintEnd_toEndOf="@+id/recycler_view_hotel"
                 app:layout_constraintStart_toStartOf="@+id/recycler_view_hotel"
                 app:layout_constraintTop_toBottomOf="@+id/recycler_view_hotel" />
@@ -141,7 +156,7 @@
                 android:drawableLeft="@drawable/emoji_happy"
                 android:drawableRight="@drawable/vector_55"
                 android:gravity="center_vertical"
-                android:text="Удобства \n "
+                android:text="@string/amenities"
                 app:layout_constraintEnd_toEndOf="@+id/description"
                 app:layout_constraintStart_toStartOf="@+id/description"
                 app:layout_constraintTop_toBottomOf="@+id/description" />
@@ -152,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
-                android:text="Самое необходимое"
+                android:text="@string/most_necessary"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@id/amenities"
                 app:layout_constraintStart_toStartOf="@+id/amenities"
@@ -177,7 +192,7 @@
                 android:drawableLeft="@drawable/tick_square"
                 android:drawableRight="@drawable/vector_55"
                 android:gravity="center_vertical"
-                android:text="Что включено \n "
+                android:text="@string/included"
                 app:layout_constraintEnd_toEndOf="@+id/amenities"
                 app:layout_constraintStart_toStartOf="@+id/amenities"
                 app:layout_constraintTop_toBottomOf="@+id/amenities" />
@@ -188,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
-                android:text="Самое необходимое"
+                android:text="@string/most_necessary"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@id/included"
                 app:layout_constraintStart_toStartOf="@+id/included"
@@ -214,11 +229,9 @@
                 android:drawableLeft="@drawable/close_square"
                 android:drawableRight="@drawable/vector_55"
                 android:gravity="center_vertical"
-                android:text="Что не включено \n "
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/excluded"
                 app:layout_constraintEnd_toEndOf="@+id/included"
                 app:layout_constraintStart_toStartOf="@+id/included"
-
                 app:layout_constraintTop_toBottomOf="@+id/included" />
 
             <TextView
@@ -227,26 +240,46 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
-                android:text="Самое необходимое"
+                android:text="@string/most_necessary"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@id/excluded"
                 app:layout_constraintStart_toStartOf="@+id/excluded"
                 app:layout_marginBaseline="18dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@color/white">
+
+            <View
+                android:id="@+id/third_hotel_layout_background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/apply_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/second_hotel_layout_background" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/apply_button"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/to_choose_room"
                 app:cornerRadius="15dp"
-                android:text="К выбору номера" />
-        </FrameLayout>
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/excluded"
+                app:layout_constraintStart_toStartOf="@id/excluded"
+                app:layout_constraintTop_toBottomOf="@id/second_hotel_layout_background" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:indeterminate="true"
+                android:scaleY="2"
+                android:visibility="gone"
+                app:indicatorColor="@color/golden_box_color"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

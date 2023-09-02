@@ -31,6 +31,7 @@ class HotelViewModel @Inject constructor(private val hotelUseCase: GetHotelUseCa
     }
 
     fun getHotelInfo() {
+        _state.value = HotelState.Loading
         viewModelScope.launch(Dispatchers.IO) {
             hotelUseCase.invoke().onSuccess { hotel ->
                 val imageList = ArrayList<SlideModel>()

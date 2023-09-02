@@ -10,6 +10,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.example.mikailovhotel.shared.core.R
 import com.google.android.material.snackbar.Snackbar
 
 abstract class BaseFragment<VB : ViewBinding>(
@@ -62,19 +63,19 @@ abstract class BaseFragment<VB : ViewBinding>(
 
     protected abstract fun injectDependencies()
 
-//    protected open fun showErrorSnackbar(message: String, invoke: () -> Unit) {
-//        errorSnackbar = Snackbar.make(requireView(), message, Snackbar.LENGTH_INDEFINITE)
-//        errorSnackbar?.setAction(getString(R.string.retry)) {
-//            try {
-//                invoke()
-//            } catch (e: Exception) {
-//                dismissErrorSnackBar()
-//            }
-//        }
-//        errorSnackbar?.show()
-//    }
+    protected open fun showErrorSnackbar(message: String, invoke: () -> Unit) {
+        errorSnackbar = Snackbar.make(requireView(), message, Snackbar.LENGTH_INDEFINITE)
+        errorSnackbar?.setAction(getString(R.string.retry)) {
+            try {
+                invoke()
+            } catch (e: Exception) {
+                dismissErrorSnackBar()
+            }
+        }
+        errorSnackbar?.show()
+    }
 
-//    protected fun dismissErrorSnackBar() = errorSnackbar?.dismiss()
+    protected fun dismissErrorSnackBar() = errorSnackbar?.dismiss()
 //
 //    protected fun disappearBottomNavigation() {
 //        getBottomNavigationView().findViewById<BottomNavigationView>(R.id.bottom_navigation).visibility =
