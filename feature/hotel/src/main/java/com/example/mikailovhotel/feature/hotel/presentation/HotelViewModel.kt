@@ -18,22 +18,22 @@ class HotelViewModel @Inject constructor(private val hotelUseCase: GetHotelUseCa
 
     private val _state: MutableLiveData<HotelState> = MutableLiveData<HotelState>()
     val state: LiveData<HotelState> = _state
+    private var exceptionHandler: CoroutineExceptionHandler
 
     init {
-        getHotelInfo()
-    }
-
-    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
-        when (throwable) {
-            is UnknownHostException -> handleError(throwable)
-            is IllegalArgumentException -> handleError(throwable)
-            is CancellationException -> handleError(throwable)
+        exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+            when (throwable) {
+                is UnknownHostException -> handleError(throwable)
+                is IllegalArgumentException -> handleError(throwable)
+                is CancellationException -> handleError(throwable)
+            }
         }
+        getHotelInfo()
     }
 
     fun getHotelInfo() {
         _state.value = HotelState.Loading
-        viewModelScope.launch(exceptionHandler + Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             hotelUseCase.invoke().onSuccess { hotel ->
                 val imageList = ArrayList<SlideModel>()
                 hotel.imageUrls.mapTo(imageList) { SlideModel(it) }

@@ -67,6 +67,6 @@ dependencies {
     implementation(project(":shared:core"))
     implementation(project(":component:navigation"))
 
-    //SwipeToRefresh
+    //swipe to refresh layout
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }
