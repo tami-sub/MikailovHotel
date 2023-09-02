@@ -19,6 +19,10 @@ class HotelViewModel @Inject constructor(private val hotelUseCase: GetHotelUseCa
     private val _state: MutableLiveData<HotelState> = MutableLiveData<HotelState>()
     val state: LiveData<HotelState> = _state
 
+    init {
+        getHotelInfo()
+    }
+
     private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         when (throwable) {
             is UnknownHostException -> handleError(throwable)
@@ -26,7 +30,7 @@ class HotelViewModel @Inject constructor(private val hotelUseCase: GetHotelUseCa
         }
     }
 
-    fun getHotel() {
+    fun getHotelInfo() {
         viewModelScope.launch(Dispatchers.IO) {
             hotelUseCase.invoke().onSuccess { hotel ->
                 val imageList = ArrayList<SlideModel>()
@@ -36,7 +40,9 @@ class HotelViewModel @Inject constructor(private val hotelUseCase: GetHotelUseCa
                 }
 
             }.onFailure {
-                _state.value = HotelState.Error(it)
+                withContext(Dispatchers.Main) {
+                    _state.value = HotelState.Error(it)
+                }
             }
         }
     }

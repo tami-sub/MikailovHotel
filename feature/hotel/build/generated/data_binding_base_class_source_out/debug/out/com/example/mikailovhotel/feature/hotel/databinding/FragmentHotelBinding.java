@@ -4,24 +4,44 @@ package com.example.mikailovhotel.feature.hotel.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.example.mikailovhotel.feature.hotel.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentHotelBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final NestedScrollView rootView;
 
   @NonNull
   public final TextView address;
+
+  @NonNull
+  public final MaterialButton amenities;
+
+  @NonNull
+  public final TextView amenitiesSupportText;
+
+  @NonNull
+  public final TextView description;
+
+  @NonNull
+  public final MaterialButton excluded;
+
+  @NonNull
+  public final TextView excludedSupportText;
+
+  @NonNull
+  public final View firstSeparator;
 
   @NonNull
   public final TextView goldenScore;
@@ -30,25 +50,56 @@ public final class FragmentHotelBinding implements ViewBinding {
   public final ImageSlider imageSlider;
 
   @NonNull
+  public final MaterialButton included;
+
+  @NonNull
+  public final TextView includedSupportText;
+
+  @NonNull
   public final TextView name;
 
   @NonNull
   public final TextView price;
 
-  private FragmentHotelBinding(@NonNull ScrollView rootView, @NonNull TextView address,
-      @NonNull TextView goldenScore, @NonNull ImageSlider imageSlider, @NonNull TextView name,
-      @NonNull TextView price) {
+  @NonNull
+  public final RecyclerView recyclerViewHotel;
+
+  @NonNull
+  public final View secondSeparator;
+
+  @NonNull
+  public final TextView textView2;
+
+  private FragmentHotelBinding(@NonNull NestedScrollView rootView, @NonNull TextView address,
+      @NonNull MaterialButton amenities, @NonNull TextView amenitiesSupportText,
+      @NonNull TextView description, @NonNull MaterialButton excluded,
+      @NonNull TextView excludedSupportText, @NonNull View firstSeparator,
+      @NonNull TextView goldenScore, @NonNull ImageSlider imageSlider,
+      @NonNull MaterialButton included, @NonNull TextView includedSupportText,
+      @NonNull TextView name, @NonNull TextView price, @NonNull RecyclerView recyclerViewHotel,
+      @NonNull View secondSeparator, @NonNull TextView textView2) {
     this.rootView = rootView;
     this.address = address;
+    this.amenities = amenities;
+    this.amenitiesSupportText = amenitiesSupportText;
+    this.description = description;
+    this.excluded = excluded;
+    this.excludedSupportText = excludedSupportText;
+    this.firstSeparator = firstSeparator;
     this.goldenScore = goldenScore;
     this.imageSlider = imageSlider;
+    this.included = included;
+    this.includedSupportText = includedSupportText;
     this.name = name;
     this.price = price;
+    this.recyclerViewHotel = recyclerViewHotel;
+    this.secondSeparator = secondSeparator;
+    this.textView2 = textView2;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public NestedScrollView getRoot() {
     return rootView;
   }
 
@@ -79,6 +130,42 @@ public final class FragmentHotelBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.amenities;
+      MaterialButton amenities = ViewBindings.findChildViewById(rootView, id);
+      if (amenities == null) {
+        break missingId;
+      }
+
+      id = R.id.amenities_support_text;
+      TextView amenitiesSupportText = ViewBindings.findChildViewById(rootView, id);
+      if (amenitiesSupportText == null) {
+        break missingId;
+      }
+
+      id = R.id.description;
+      TextView description = ViewBindings.findChildViewById(rootView, id);
+      if (description == null) {
+        break missingId;
+      }
+
+      id = R.id.excluded;
+      MaterialButton excluded = ViewBindings.findChildViewById(rootView, id);
+      if (excluded == null) {
+        break missingId;
+      }
+
+      id = R.id.excluded_support_text;
+      TextView excludedSupportText = ViewBindings.findChildViewById(rootView, id);
+      if (excludedSupportText == null) {
+        break missingId;
+      }
+
+      id = R.id.first_separator;
+      View firstSeparator = ViewBindings.findChildViewById(rootView, id);
+      if (firstSeparator == null) {
+        break missingId;
+      }
+
       id = R.id.golden_score;
       TextView goldenScore = ViewBindings.findChildViewById(rootView, id);
       if (goldenScore == null) {
@@ -88,6 +175,18 @@ public final class FragmentHotelBinding implements ViewBinding {
       id = R.id.image_slider;
       ImageSlider imageSlider = ViewBindings.findChildViewById(rootView, id);
       if (imageSlider == null) {
+        break missingId;
+      }
+
+      id = R.id.included;
+      MaterialButton included = ViewBindings.findChildViewById(rootView, id);
+      if (included == null) {
+        break missingId;
+      }
+
+      id = R.id.included_support_text;
+      TextView includedSupportText = ViewBindings.findChildViewById(rootView, id);
+      if (includedSupportText == null) {
         break missingId;
       }
 
@@ -103,8 +202,28 @@ public final class FragmentHotelBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHotelBinding((ScrollView) rootView, address, goldenScore, imageSlider,
-          name, price);
+      id = R.id.recycler_view_hotel;
+      RecyclerView recyclerViewHotel = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerViewHotel == null) {
+        break missingId;
+      }
+
+      id = R.id.second_separator;
+      View secondSeparator = ViewBindings.findChildViewById(rootView, id);
+      if (secondSeparator == null) {
+        break missingId;
+      }
+
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
+        break missingId;
+      }
+
+      return new FragmentHotelBinding((NestedScrollView) rootView, address, amenities,
+          amenitiesSupportText, description, excluded, excludedSupportText, firstSeparator,
+          goldenScore, imageSlider, included, includedSupportText, name, price, recyclerViewHotel,
+          secondSeparator, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

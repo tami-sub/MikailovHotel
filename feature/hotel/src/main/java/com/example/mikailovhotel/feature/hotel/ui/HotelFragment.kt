@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.mikailovhotel.feature.hotel.R
@@ -30,19 +31,31 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.hotel)
-        viewModel.getHotel()
-        viewModel.state.observe(viewLifecycleOwner){
-            when(it){
+        viewModel.state.observe(viewLifecycleOwner) {
+            when (it) {
+                is HotelState.Loading -> {}
                 is HotelState.Success -> {
                     binding.imageSlider.setImageList(it.imageList, ScaleTypes.FIT)
+                    showRecyclerView(it.hotel.aboutTheHotel.peculiarities)
                 }
-                else -> {}
+                is HotelState.Error -> {}
+                is HotelState.Clear -> {}
             }
         }
     }
 
     override fun injectDependencies() {
         AndroidSupportInjection.inject(this)
+    }
+
+    private fun showRecyclerView(data: List<String>) {
+        binding.recyclerViewHotel.apply {
+            val applicationAdapter = HotelFeaturesAdapter()
+            applicationAdapter.storageList = data
+            adapter = applicationAdapter
+            this.layoutManager =
+                StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL)
+        }
     }
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,6 +15,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
             android:background="@drawable/initial_layout_background">
 
             <com.denzcoskun.imageslider.ImageSlider
@@ -27,7 +28,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
+            <!-- 257dp -->
             <TextView
                 android:id="@+id/golden_score"
                 style="@style/golden_text"
@@ -82,20 +83,170 @@
                 app:layout_constraintStart_toEndOf="@id/price" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/layout_background">
 
             <TextView
+                android:id="@+id/textView2"
                 style="@style/custom_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Об отеле"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Об отеле"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_hotel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:scrollbars="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/description"
+                style="@style/colorful_plain_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!"
+                app:layout_constraintEnd_toEndOf="@+id/recycler_view_hotel"
+                app:layout_constraintStart_toStartOf="@+id/recycler_view_hotel"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_view_hotel" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/disabled_button_box_color"
+                app:layout_constraintBottom_toBottomOf="@+id/excluded_support_text"
+                app:layout_constraintEnd_toEndOf="@id/amenities"
+                app:layout_constraintStart_toStartOf="@id/amenities"
+                app:layout_constraintTop_toTopOf="@id/amenities_support_text">
+
+            </View>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/amenities"
+                style="@style/disabled_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/emoji_happy"
+                android:drawableRight="@drawable/vector_55"
+                android:gravity="center_vertical"
+                android:text="Удобства \n "
+                app:layout_constraintEnd_toEndOf="@+id/description"
+                app:layout_constraintStart_toStartOf="@+id/description"
+                app:layout_constraintTop_toBottomOf="@+id/description" />
+
+            <TextView
+                android:id="@+id/amenities_support_text"
+                style="@style/pale_plain_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55dp"
+                android:text="Самое необходимое"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/amenities"
+                app:layout_constraintStart_toStartOf="@+id/amenities"
+                app:layout_marginBaseline="18dp" />
+
+            <View
+                android:id="@+id/first_separator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="53dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/grey_font"
+                app:layout_constraintEnd_toEndOf="@+id/amenities"
+                app:layout_constraintStart_toStartOf="@+id/amenities"
+                app:layout_constraintTop_toBottomOf="@+id/amenities" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/included"
+                style="@style/disabled_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/tick_square"
+                android:drawableRight="@drawable/vector_55"
+                android:gravity="center_vertical"
+                android:text="Что включено \n "
+                app:layout_constraintEnd_toEndOf="@+id/amenities"
+                app:layout_constraintStart_toStartOf="@+id/amenities"
+                app:layout_constraintTop_toBottomOf="@+id/amenities" />
+
+            <TextView
+                android:id="@+id/included_support_text"
+                style="@style/pale_plain_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55dp"
+                android:text="Самое необходимое"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/included"
+                app:layout_constraintStart_toStartOf="@+id/included"
+                app:layout_marginBaseline="18dp" />
+
+            <View
+                android:id="@+id/second_separator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="53dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/grey_font"
+                app:layout_constraintEnd_toEndOf="@+id/included"
+                app:layout_constraintStart_toStartOf="@+id/included"
+                app:layout_constraintTop_toBottomOf="@+id/included" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/excluded"
+                style="@style/disabled_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:drawableLeft="@drawable/close_square"
+                android:drawableRight="@drawable/vector_55"
+                android:gravity="center_vertical"
+                android:text="Что не включено \n "
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/included"
+                app:layout_constraintStart_toStartOf="@+id/included"
+
+                app:layout_constraintTop_toBottomOf="@+id/included" />
+
+            <TextView
+                android:id="@+id/excluded_support_text"
+                style="@style/pale_plain_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55dp"
+                android:text="Самое необходимое"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/excluded"
+                app:layout_constraintStart_toStartOf="@+id/excluded"
+                app:layout_marginBaseline="18dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/white">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:cornerRadius="15dp"
+                android:text="К выбору номера" />
+        </FrameLayout>
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

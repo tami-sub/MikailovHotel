@@ -16,10 +16,10 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
+            style="@style/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:layout_gravity="center"
-            app:titleCentered="true" />
+            />
 
     </com.google.android.material.appbar.AppBarLayout>
 

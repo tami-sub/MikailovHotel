@@ -1,9 +1,26 @@
 com.example.mikailovhotel.feature.hotel
+drawable close_square
+drawable emoji_happy
 drawable initial_layout_background
+drawable tick_square
+drawable vector_55
 id address
+id amenities
+id amenities_support_text
+id description
+id excluded
+id excluded_support_text
+id first_separator
 id golden_score
 id image_slider
+id included
+id included_support_text
 id name
+id nested_horizontal_hotel_feature
 id price
+id recycler_view_hotel
+id second_separator
+id textView2
 layout fragment_hotel
+layout item_hotel_features
 string hotel
