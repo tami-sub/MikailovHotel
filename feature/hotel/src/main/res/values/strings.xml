@@ -8,4 +8,8 @@
     <string name="included">Что включено \n</string>
     <string name="excluded">Что не включено \n</string>
     <string name="to_choose_room">К выбору номера</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="price">Price</string>
+    <string name="description">Description</string>
 </resources>

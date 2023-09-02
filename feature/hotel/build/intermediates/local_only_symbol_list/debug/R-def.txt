@@ -10,6 +10,7 @@ id address
 id amenities
 id amenities_support_text
 id apply_button
+id content
 id description
 id excluded
 id excluded_support_text
@@ -22,7 +23,6 @@ id initial_hotel_layout_background
 id name
 id nested_horizontal_hotel_feature
 id price
-id progress_bar
 id recycler_view_hotel
 id second_hotel_layout_background
 id second_separator
@@ -31,10 +31,14 @@ id third_hotel_layout_background
 layout fragment_hotel
 layout item_hotel_features
 string about_hotel
+string address
 string amenities
+string description
 string excluded
 string hotel
 string included
 string most_necessary
+string name
+string price
 string to_choose_room
 string tour_with_flight

@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.example.mikailovhotel.shared.core.R
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.snackbar.Snackbar
 
 abstract class BaseFragment<VB : ViewBinding>(
@@ -76,17 +78,14 @@ abstract class BaseFragment<VB : ViewBinding>(
     }
 
     protected fun dismissErrorSnackBar() = errorSnackbar?.dismiss()
-//
-//    protected fun disappearBottomNavigation() {
-//        getBottomNavigationView().findViewById<BottomNavigationView>(R.id.bottom_navigation).visibility =
-//            View.GONE
-//    }
-//
-//    protected fun showBottomNavigation() {
-//        getBottomNavigationView().visibility =
-//            View.VISIBLE
-//    }
-//
-//    protected fun getBottomNavigationView(): BottomNavigationView =
-//        requireActivity().findViewById(R.id.bottom_navigation)
+
+    fun showProgressBar() {
+        requireActivity().findViewById<LinearProgressIndicator>(R.id.progress_bar).visibility =
+            View.VISIBLE
+    }
+
+    fun hideProgressBar() {
+        requireActivity().findViewById<LinearProgressIndicator>(R.id.progress_bar).visibility =
+            View.GONE
+    }
 }
