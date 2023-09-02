@@ -1,12 +1,12 @@
 package com.example.mikailovhotel.feature.hotel.presentation
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.mikailovhotel.shared.core.domain.usecase.GetHotelUseCase
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,19 +18,21 @@ class HotelViewModel @Inject constructor(private val hotelUseCase: GetHotelUseCa
 
     private val _state: MutableLiveData<HotelState> = MutableLiveData<HotelState>()
     val state: LiveData<HotelState> = _state
+    private var exceptionHandler: CoroutineExceptionHandler
 
     init {
+        exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+            when (throwable) {
+                is UnknownHostException -> handleError(throwable)
+                is IllegalArgumentException -> handleError(throwable)
+                is CancellationException -> handleError(throwable)
+            }
+        }
         getHotelInfo()
     }
 
-    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
-        when (throwable) {
-            is UnknownHostException -> handleError(throwable)
-            is IllegalArgumentException -> handleError(throwable)
-        }
-    }
-
     fun getHotelInfo() {
+        _state.value = HotelState.Loading
         viewModelScope.launch(Dispatchers.IO) {
             hotelUseCase.invoke().onSuccess { hotel ->
                 val imageList = ArrayList<SlideModel>()

@@ -8,6 +8,10 @@ int drawable active_button 0x0
 int drawable golden_box 0x0
 int drawable grey_box 0x0
 int drawable layout_background 0x0
+int id progress_bar 0x0
+int string golden_score 0x0
+int string price 0x0
+int string retry 0x0
 int style address 0x0
 int style colorful_plain_text 0x0
 int style custom_title 0x0

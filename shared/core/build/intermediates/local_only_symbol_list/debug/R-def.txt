@@ -10,6 +10,10 @@ drawable active_button
 drawable golden_box
 drawable grey_box
 drawable layout_background
+id progress_bar
+string golden_score
+string price
+string retry
 style address
 style colorful_plain_text
 style custom_title

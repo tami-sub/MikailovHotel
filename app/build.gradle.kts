@@ -22,9 +22,12 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://run.mocky.io/v3/\"")
+        }
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://run.mocky.io/v3/\"")
         }
     }
     compileOptions {
@@ -34,8 +37,9 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -49,25 +53,25 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //livedata
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
 
     //viewmodel
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
 
     //dagger
-    implementation ("com.google.dagger:dagger:2.44")
-    implementation ("com.google.dagger:dagger-android:2.44")
-    implementation ("com.google.dagger:dagger-android-support:2.44")
-    kapt ("com.google.dagger:dagger-compiler:2.44")
-    kapt ("com.google.dagger:dagger-android-processor:2.44")
+    implementation("com.google.dagger:dagger:2.44")
+    implementation("com.google.dagger:dagger-android:2.44")
+    implementation("com.google.dagger:dagger-android-support:2.44")
+    kapt("com.google.dagger:dagger-compiler:2.44")
+    kapt("com.google.dagger:dagger-android-processor:2.44")
 
     //navigation
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.5.3")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
 
     //retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     //modules
     implementation(project(":component:navigation"))

@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="about_hotel">Об отеле</string>
+    <string name="address">Address</string>
+    <string name="amenities">Удобства \n</string>
+    <string name="description">Description</string>
+    <string name="excluded">Что не включено \n</string>
     <string name="hotel">Отель</string>
+    <string name="included">Что включено \n</string>
+    <string name="most_necessary">Самое необходимое</string>
+    <string name="name">Name</string>
+    <string name="price">Price</string>
+    <string name="to_choose_room">К выбору номера</string>
+    <string name="tour_with_flight">за тур с перелётом</string>
 </resources>
