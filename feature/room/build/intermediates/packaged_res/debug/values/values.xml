@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="topAppBar" type="id"/>
+    <string name="price_room_placeholder">%1$s ₽</string>
+</resources>

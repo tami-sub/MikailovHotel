@@ -77,5 +77,6 @@ dependencies {
     implementation(project(":component:navigation"))
     implementation(project(":shared:core"))
     implementation(project(":feature:hotel"))
+    implementation(project(":feature:room"))
 
 }

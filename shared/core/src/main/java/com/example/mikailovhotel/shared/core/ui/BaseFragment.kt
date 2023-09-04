@@ -15,6 +15,7 @@ import com.example.mikailovhotel.shared.core.R
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.snackbar.Snackbar
 
+
 abstract class BaseFragment<VB : ViewBinding>(
     private val inflate: (LayoutInflater, ViewGroup?, Boolean) -> VB
 ) : Fragment() {
@@ -87,5 +88,13 @@ abstract class BaseFragment<VB : ViewBinding>(
     fun hideProgressBar() {
         requireActivity().findViewById<LinearProgressIndicator>(R.id.progress_bar).visibility =
             View.GONE
+    }
+
+    fun clearAppBarTitle() {
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = ""
+    }
+
+    fun setAppBarTitle(title: String) {
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = title
     }
 }

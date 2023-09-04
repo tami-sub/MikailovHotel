@@ -2,10 +2,10 @@ package com.example.mikailovhotel.feature.hotel.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.example.mikailovhotel.component.navigation.navigate
 import com.example.mikailovhotel.feature.hotel.R
 import com.example.mikailovhotel.feature.hotel.databinding.FragmentHotelBinding
 import com.example.mikailovhotel.feature.hotel.presentation.HotelState
@@ -15,6 +15,7 @@ import com.example.mikailovhotel.shared.core.ui.BaseFragment
 import dagger.android.support.AndroidSupportInjection
 import java.util.Locale
 import javax.inject.Inject
+import kotlin.math.max
 
 class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::inflate) {
 
@@ -29,7 +30,7 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.hotel)
+        setAppBarTitle(getString(R.string.hotel))
         viewModel.state.observe(viewLifecycleOwner) {
             renderState(it)
         }
@@ -37,6 +38,13 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
         binding.swipeRefreshLayout.setOnRefreshListener {
             viewModel.getHotelInfo()
             binding.swipeRefreshLayout.isRefreshing = false
+        }
+
+        binding.applyButton.setOnClickListener() {
+            navigate(
+                R.id.action_hotelFragment_to_roomsFragment, null,
+                binding.name.text.toString()
+            )
         }
     }
 
@@ -53,7 +61,6 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
                 content.visibility = View.VISIBLE
                 imageSlider.setImageList(state.imageList, ScaleTypes.FIT)
                 showRecyclerView(state.hotel.aboutTheHotel.peculiarities)
-                applyButton.isEnabled = true
                 goldenScore.text = getString(
                     com.example.mikailovhotel.shared.core.R.string.golden_score,
                     state.hotel.rating,
@@ -61,13 +68,12 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
                 )
                 name.text = state.hotel.name
                 address.text = state.hotel.address
-
                 price.text = getString(
                     R.string.price_placeholder,
                     String.format(Locale.FRANCE, "%,d", state.hotel.minimalPrice)
                 )
+                priceForIt.text = state.hotel.priceForIt
                 description.text = state.hotel.aboutTheHotel.description
-
             }
 
             is HotelState.Error -> {
@@ -77,7 +83,6 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
                         viewModel.getHotelInfo()
                     }
                 }
-                applyButton.isEnabled = false
             }
 
             is HotelState.Clear -> {}
@@ -94,7 +99,10 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
             applicationAdapter.storageList = data
             adapter = applicationAdapter
             this.layoutManager =
-                StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL)
+                StaggeredGridLayoutManager(
+                    max(1, data.size - 1),
+                    StaggeredGridLayoutManager.HORIZONTAL
+                )
         }
     }
 }

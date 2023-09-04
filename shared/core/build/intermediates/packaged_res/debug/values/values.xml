@@ -32,6 +32,10 @@
         <item name="android:textColor">@color/golden_text</item>
         <item name="android:background">@drawable/golden_box</item>
     </style>
+    <style name="more_info_text" parent="address">
+        <item name="android:textSize">16sp</item>
+        <item name="height">29dp</item>
+    </style>
     <style name="nested_horizontal_info_text" parent="pale_plain_text">
         <item name="android:background">@drawable/grey_box</item>
         <item name="android:paddingHorizontal">10dp</item>

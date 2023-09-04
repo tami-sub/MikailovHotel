@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.denzcoskun.imageslider.models.SlideModel
-import com.example.mikailovhotel.shared.core.domain.usecase.GetHotelUseCase
+import com.example.mikailovhotel.shared.core.domain.usecase.HotelUseCase
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +14,7 @@ import kotlinx.coroutines.withContext
 import java.net.UnknownHostException
 import javax.inject.Inject
 
-class HotelViewModel @Inject constructor(private val hotelUseCase: GetHotelUseCase) : ViewModel() {
+class HotelViewModel @Inject constructor(private val hotelUseCase: HotelUseCase) : ViewModel() {
 
     private val _state: MutableLiveData<HotelState> = MutableLiveData<HotelState>()
     val state: LiveData<HotelState> = _state

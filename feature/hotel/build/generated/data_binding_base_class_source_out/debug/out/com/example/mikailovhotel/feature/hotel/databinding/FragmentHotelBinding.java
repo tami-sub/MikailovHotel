@@ -75,6 +75,9 @@ public final class FragmentHotelBinding implements ViewBinding {
   public final TextView price;
 
   @NonNull
+  public final TextView priceForIt;
+
+  @NonNull
   public final RecyclerView recyclerViewHotel;
 
   @NonNull
@@ -97,9 +100,9 @@ public final class FragmentHotelBinding implements ViewBinding {
       @NonNull View firstSeparator, @NonNull TextView goldenScore, @NonNull ImageSlider imageSlider,
       @NonNull MaterialButton included, @NonNull TextView includedSupportText,
       @NonNull View initialHotelLayoutBackground, @NonNull TextView name, @NonNull TextView price,
-      @NonNull RecyclerView recyclerViewHotel, @NonNull View secondHotelLayoutBackground,
-      @NonNull View secondSeparator, @NonNull SwipeRefreshLayout swipeRefreshLayout,
-      @NonNull View thirdHotelLayoutBackground) {
+      @NonNull TextView priceForIt, @NonNull RecyclerView recyclerViewHotel,
+      @NonNull View secondHotelLayoutBackground, @NonNull View secondSeparator,
+      @NonNull SwipeRefreshLayout swipeRefreshLayout, @NonNull View thirdHotelLayoutBackground) {
     this.rootView = rootView;
     this.aboutHotel = aboutHotel;
     this.address = address;
@@ -118,6 +121,7 @@ public final class FragmentHotelBinding implements ViewBinding {
     this.initialHotelLayoutBackground = initialHotelLayoutBackground;
     this.name = name;
     this.price = price;
+    this.priceForIt = priceForIt;
     this.recyclerViewHotel = recyclerViewHotel;
     this.secondHotelLayoutBackground = secondHotelLayoutBackground;
     this.secondSeparator = secondSeparator;
@@ -254,6 +258,12 @@ public final class FragmentHotelBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.price_for_it;
+      TextView priceForIt = ViewBindings.findChildViewById(rootView, id);
+      if (priceForIt == null) {
+        break missingId;
+      }
+
       id = R.id.recycler_view_hotel;
       RecyclerView recyclerViewHotel = ViewBindings.findChildViewById(rootView, id);
       if (recyclerViewHotel == null) {
@@ -283,8 +293,9 @@ public final class FragmentHotelBinding implements ViewBinding {
       return new FragmentHotelBinding((SwipeRefreshLayout) rootView, aboutHotel, address, amenities,
           amenitiesSupportText, applyButton, content, description, excluded, excludedSupportText,
           firstSeparator, goldenScore, imageSlider, included, includedSupportText,
-          initialHotelLayoutBackground, name, price, recyclerViewHotel, secondHotelLayoutBackground,
-          secondSeparator, swipeRefreshLayout, thirdHotelLayoutBackground);
+          initialHotelLayoutBackground, name, price, priceForIt, recyclerViewHotel,
+          secondHotelLayoutBackground, secondSeparator, swipeRefreshLayout,
+          thirdHotelLayoutBackground);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

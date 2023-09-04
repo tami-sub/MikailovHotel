@@ -17,6 +17,7 @@ int style colorful_plain_text 0x0
 int style custom_title 0x0
 int style disabled_button 0x0
 int style golden_text 0x0
+int style more_info_text 0x0
 int style nested_horizontal_info_text 0x0
 int style pale_plain_text 0x0
 int style text 0x0

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="action_hotelFragment_to_roomsFragment" type="id"/>
     <string name="about_hotel">Об отеле</string>
     <string name="address">Address</string>
     <string name="amenities">Удобства \n</string>

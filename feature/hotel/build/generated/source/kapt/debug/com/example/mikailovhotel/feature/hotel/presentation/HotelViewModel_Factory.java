@@ -1,6 +1,6 @@
 package com.example.mikailovhotel.feature.hotel.presentation;
 
-import com.example.mikailovhotel.shared.core.domain.usecase.GetHotelUseCase;
+import com.example.mikailovhotel.shared.core.domain.usecase.HotelUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.QualifierMetadata;
@@ -20,9 +20,9 @@ import javax.inject.Provider;
     "rawtypes"
 })
 public final class HotelViewModel_Factory implements Factory<HotelViewModel> {
-  private final Provider<GetHotelUseCase> hotelUseCaseProvider;
+  private final Provider<HotelUseCase> hotelUseCaseProvider;
 
-  public HotelViewModel_Factory(Provider<GetHotelUseCase> hotelUseCaseProvider) {
+  public HotelViewModel_Factory(Provider<HotelUseCase> hotelUseCaseProvider) {
     this.hotelUseCaseProvider = hotelUseCaseProvider;
   }
 
@@ -31,11 +31,11 @@ public final class HotelViewModel_Factory implements Factory<HotelViewModel> {
     return newInstance(hotelUseCaseProvider.get());
   }
 
-  public static HotelViewModel_Factory create(Provider<GetHotelUseCase> hotelUseCaseProvider) {
+  public static HotelViewModel_Factory create(Provider<HotelUseCase> hotelUseCaseProvider) {
     return new HotelViewModel_Factory(hotelUseCaseProvider);
   }
 
-  public static HotelViewModel newInstance(GetHotelUseCase hotelUseCase) {
+  public static HotelViewModel newInstance(HotelUseCase hotelUseCase) {
     return new HotelViewModel(hotelUseCase);
   }
 }

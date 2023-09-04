@@ -19,6 +19,7 @@ style colorful_plain_text
 style custom_title
 style disabled_button
 style golden_text
+style more_info_text
 style nested_horizontal_info_text
 style pale_plain_text
 style text

@@ -1,20 +1,17 @@
 package com.example.mikailovhotel
 
-import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import dagger.android.AndroidInjection
-import dagger.android.DaggerApplication
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
@@ -26,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(com.example.mikailovhotel.component.navigation.R.id.globalHost) as NavHostFragment
         navController = navHostFragment.navController
-
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
@@ -36,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
+        supportActionBar?.title = ""
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

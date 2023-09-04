@@ -1,0 +1,19 @@
+com.example.mikailovhotel.feature.room
+drawable blue_button_arrow
+drawable blue_button_background
+id apply_button
+id content_rooms
+id image_slider
+id more_info_button
+id name
+id nested_horizontal_room_feature
+id price
+id price_per
+id recycler_view_room_features
+id recycler_view_rooms
+id swipeRefreshLayout
+id topAppBar
+layout fragment_rooms
+layout item_room
+layout item_room_features
+string price_room_placeholder

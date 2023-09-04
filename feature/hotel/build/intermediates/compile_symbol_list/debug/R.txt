@@ -4,6 +4,7 @@ int drawable initial_layout_background 0x0
 int drawable tick_square 0x0
 int drawable vector_55 0x0
 int id about_hotel 0x0
+int id action_hotelFragment_to_roomsFragment 0x0
 int id address 0x0
 int id amenities 0x0
 int id amenities_support_text 0x0
@@ -21,6 +22,7 @@ int id initial_hotel_layout_background 0x0
 int id name 0x0
 int id nested_horizontal_hotel_feature 0x0
 int id price 0x0
+int id price_for_it 0x0
 int id recycler_view_hotel 0x0
 int id second_hotel_layout_background 0x0
 int id second_separator 0x0

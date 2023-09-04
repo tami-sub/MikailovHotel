@@ -6,6 +6,16 @@
 
     <fragment
         android:id="@+id/hotelFragment"
-        android:name="com.example.mikailovhotel.feature.hotel.ui.HotelFragment"
-        android:label="HotelFragment" />
+        android:name="com.example.mikailovhotel.feature.hotel.ui.HotelFragment">
+        <action
+            android:id="@+id/action_hotelFragment_to_roomsFragment"
+            app:destination="@id/roomsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomsFragment"
+        android:name="com.example.mikailovhotel.feature.room.ui.RoomsFragment" />
 </navigation>

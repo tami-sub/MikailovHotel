@@ -3,6 +3,7 @@ package com.example.mikailovhotel.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.mikailovhotel.feature.hotel.presentation.HotelViewModel
+import com.example.mikailovhotel.feature.room.presentation.RoomsViewModel
 import com.example.mikailovhotel.shared.core.presentation.ViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -17,4 +18,9 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(HotelViewModel::class)
     fun hotelViewModel(viewModel: HotelViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(RoomsViewModel::class)
+    fun roomsViewModel(viewModel: RoomsViewModel): ViewModel
 }

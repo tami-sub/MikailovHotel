@@ -6,6 +6,7 @@ drawable initial_layout_background
 drawable tick_square
 drawable vector_55
 id about_hotel
+id action_hotelFragment_to_roomsFragment
 id address
 id amenities
 id amenities_support_text
@@ -23,6 +24,7 @@ id initial_hotel_layout_background
 id name
 id nested_horizontal_hotel_feature
 id price
+id price_for_it
 id recycler_view_hotel
 id second_hotel_layout_background
 id second_separator
