@@ -1,0 +1,2 @@
+com.example.mikailovhotel.feature.paid
+layout fragment_paid
