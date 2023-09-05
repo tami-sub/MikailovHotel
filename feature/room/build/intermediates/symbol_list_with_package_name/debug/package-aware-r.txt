@@ -1,7 +1,7 @@
 com.example.mikailovhotel.feature.room
 drawable blue_button_arrow
 drawable blue_button_background
-id apply_button
+id choose_room
 id content_rooms
 id image_slider
 id more_info_button
@@ -16,4 +16,8 @@ id topAppBar
 layout fragment_rooms
 layout item_room
 layout item_room_features
+string choose_room
+string duration
+string more_info
+string name
 string price_room_placeholder

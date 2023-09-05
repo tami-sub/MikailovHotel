@@ -23,7 +23,7 @@ public final class ItemRoomBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final MaterialButton applyButton;
+  public final MaterialButton chooseRoom;
 
   @NonNull
   public final ImageSlider imageSlider;
@@ -43,12 +43,12 @@ public final class ItemRoomBinding implements ViewBinding {
   @NonNull
   public final RecyclerView recyclerViewRoomFeatures;
 
-  private ItemRoomBinding(@NonNull ConstraintLayout rootView, @NonNull MaterialButton applyButton,
+  private ItemRoomBinding(@NonNull ConstraintLayout rootView, @NonNull MaterialButton chooseRoom,
       @NonNull ImageSlider imageSlider, @NonNull MaterialButton moreInfoButton,
       @NonNull TextView name, @NonNull TextView price, @NonNull TextView pricePer,
       @NonNull RecyclerView recyclerViewRoomFeatures) {
     this.rootView = rootView;
-    this.applyButton = applyButton;
+    this.chooseRoom = chooseRoom;
     this.imageSlider = imageSlider;
     this.moreInfoButton = moreInfoButton;
     this.name = name;
@@ -84,9 +84,9 @@ public final class ItemRoomBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.apply_button;
-      MaterialButton applyButton = ViewBindings.findChildViewById(rootView, id);
-      if (applyButton == null) {
+      id = R.id.choose_room;
+      MaterialButton chooseRoom = ViewBindings.findChildViewById(rootView, id);
+      if (chooseRoom == null) {
         break missingId;
       }
 
@@ -126,7 +126,7 @@ public final class ItemRoomBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemRoomBinding((ConstraintLayout) rootView, applyButton, imageSlider,
+      return new ItemRoomBinding((ConstraintLayout) rootView, chooseRoom, imageSlider,
           moreInfoButton, name, price, pricePer, recyclerViewRoomFeatures);
     }
     String missingId = rootView.getResources().getResourceName(id);

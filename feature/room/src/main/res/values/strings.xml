@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="price_room_placeholder">%1$s ₽</string>
+    <string name="duration">за 7 ночей с перелётом</string>
+    <string name="more_info">Подробнее о номере</string>
+    <string name="name">Name</string>
+    <string name="choose_room">Выбрать номер</string>
 </resources>

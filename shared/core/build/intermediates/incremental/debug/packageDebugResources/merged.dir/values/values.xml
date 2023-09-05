@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background_fragment_color">#F6F6F9</color>
+    <color name="background_fragment_container_color">#F6F6F9</color>
     <color name="black">#FF000000</color>
     <color name="disabled_button_box_color">#FBFBFC</color>
     <color name="golden_box_color">#33FFC700</color>
@@ -8,11 +8,13 @@
     <color name="white">#FFFFFFFF</color>
     <item name="progress_bar" type="id"/>
     <string name="golden_score">★ %1$d %2$s</string>
-    <string name="price">от %1$s ₽</string>
     <string name="retry">Обновить</string>
     <style name="address" parent="text">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#0D72FF</item>
+    </style>
+    <style name="booking_data_hint" parent="pale_plain_text">
+        <item name="android:layout_marginBottom">16dp</item>
     </style>
     <style name="colorful_plain_text" parent="text">
         <item name="android:textSize">16sp</item>
@@ -47,6 +49,14 @@
     </style>
     <style name="text">
         <item name="fontFamily">sf-pro-display</item>
+    </style>
+    <style name="text_input_layout_customer_info" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/background_fragment_container_color</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxStrokeWidth">0dp</item>
     </style>
     <style name="toolbar">
         <item name="android:background">@color/white</item>

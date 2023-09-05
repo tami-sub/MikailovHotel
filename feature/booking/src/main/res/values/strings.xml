@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="address">Address</string>
+    <string name="name">Name</string>
+    <string name="departure_from">Вылет из</string>
+    <string name="country_hint">Страна, город</string>
+    <string name="date_hint">Даты</string>
+    <string name="duration_hint">Кол-во ночей</string>
+    <string name="hotel_hint">Отель</string>
+    <string name="room_hint">Номер</string>
+    <string name="meal_hint">Питание</string>
+    <string name="customer_info">Информация о покупателе</string>
+    <string name="phone_number_hint">Номер телефона</string>
+    <string name="email">Почта</string>
+</resources>

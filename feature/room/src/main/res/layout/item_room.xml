@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:nestedScrollingEnabled="true"
     android:background="@drawable/layout_background"
     android:layout_marginBottom="8dp">
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Name"
+        tools:text="@string/name"
         app:layout_constraintStart_toStartOf="@+id/image_slider"
         app:layout_constraintTop_toBottomOf="@+id/image_slider" />
 
@@ -45,7 +46,7 @@
         android:background="@drawable/blue_button_background"
         android:id="@+id/more_info_button"
         android:drawableRight="@drawable/blue_button_arrow"
-        android:text="Подробнее о номере"
+        android:text="@string/more_info"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginTop="18dp"
@@ -61,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="16dp"
-        android:text="000000 P"
+        tools:text="000000 P"
         app:layout_constraintStart_toStartOf="@+id/more_info_button"
         app:layout_constraintTop_toBottomOf="@+id/more_info_button" />
 
@@ -71,18 +72,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="за 7 ночей с перелётом"
+        android:text="@string/duration"
         app:layout_constraintBaseline_toBaselineOf="@id/price"
         app:layout_constraintBottom_toBottomOf="@+id/price"
         app:layout_constraintStart_toEndOf="@id/price" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/apply_button"
+        android:id="@+id/choose_room"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="16dp"
-        android:text="Выбрать номер"
+        android:text="@string/choose_room"
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/recycler_view_room_features"

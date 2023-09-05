@@ -4,25 +4,42 @@ package com.example.mikailovhotel.feature.paid.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.mikailovhotel.feature.paid.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentPaidBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private FragmentPaidBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final MaterialButton applyButton;
+
+  @NonNull
+  public final TextView textView2;
+
+  @NonNull
+  public final View view;
+
+  private FragmentPaidBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton applyButton, @NonNull TextView textView2, @NonNull View view) {
     this.rootView = rootView;
+    this.applyButton = applyButton;
+    this.textView2 = textView2;
+    this.view = view;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +60,31 @@ public final class FragmentPaidBinding implements ViewBinding {
 
   @NonNull
   public static FragmentPaidBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.apply_button;
+      MaterialButton applyButton = ViewBindings.findChildViewById(rootView, id);
+      if (applyButton == null) {
+        break missingId;
+      }
 
-    return new FragmentPaidBinding((FrameLayout) rootView);
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.view;
+      View view = ViewBindings.findChildViewById(rootView, id);
+      if (view == null) {
+        break missingId;
+      }
+
+      return new FragmentPaidBinding((ConstraintLayout) rootView, applyButton, textView2, view);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

@@ -47,6 +47,15 @@
         <item name="android:paddingVertical">5dp</item>
     </style>
 
+    <style name="text_input_layout_customer_info" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/background_fragment_container_color</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxStrokeWidth">0dp</item>
+    </style>
+
     <style name="toolbar">
         <item name="android:background">@color/white</item>
         <item name="titleCentered">true</item>
@@ -58,4 +67,7 @@
         <item name="cornerRadius">5dp</item>
     </style>
 
+    <style name="booking_data_hint" parent="pale_plain_text">
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
 </resources>

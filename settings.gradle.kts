@@ -20,6 +20,6 @@ include(":component:navigation")
 include(":shared:core")
 include(":feature:hotel")
 include(":feature:room")
-
+include(":feature:booking")
 include(":feature:paid")
  
