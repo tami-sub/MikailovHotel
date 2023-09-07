@@ -1,5 +1,6 @@
 int drawable blue_button_arrow 0x0
 int drawable blue_button_background 0x0
+int id action_roomsFragment_to_bookingFragment 0x0
 int id choose_room 0x0
 int id content_rooms 0x0
 int id image_slider 0x0

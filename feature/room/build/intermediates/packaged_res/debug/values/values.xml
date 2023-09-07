@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="action_roomsFragment_to_bookingFragment" type="id"/>
     <item name="topAppBar" type="id"/>
     <string name="choose_room">Выбрать номер</string>
     <string name="duration">за 7 ночей с перелётом</string>

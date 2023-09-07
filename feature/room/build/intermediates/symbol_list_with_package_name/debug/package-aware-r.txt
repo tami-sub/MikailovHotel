@@ -1,6 +1,7 @@
 com.example.mikailovhotel.feature.room
 drawable blue_button_arrow
 drawable blue_button_background
+id action_roomsFragment_to_bookingFragment
 id choose_room
 id content_rooms
 id image_slider

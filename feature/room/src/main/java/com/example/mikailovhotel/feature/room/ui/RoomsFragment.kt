@@ -3,7 +3,9 @@ package com.example.mikailovhotel.feature.room.ui
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import com.example.mikailovhotel.component.navigation.navigate
 import com.example.mikailovhotel.component.navigation.navigationData
+import com.example.mikailovhotel.feature.room.R
 import com.example.mikailovhotel.feature.room.databinding.FragmentRoomsBinding
 import com.example.mikailovhotel.feature.room.presentation.RoomsState
 import com.example.mikailovhotel.feature.room.presentation.RoomsViewModel
@@ -73,7 +75,7 @@ class RoomsFragment : BaseFragment<FragmentRoomsBinding>(FragmentRoomsBinding::i
 
     private fun showRecyclerView(data: RoomList) {
         binding.recyclerViewRooms.apply {
-            val applicationAdapter = RoomsAdapter()
+            val applicationAdapter = RoomsAdapter { navigate(R.id.action_roomsFragment_to_bookingFragment) }
             applicationAdapter.storageList = data
             adapter = applicationAdapter
         }

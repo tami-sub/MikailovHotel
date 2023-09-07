@@ -15,7 +15,8 @@ import com.example.mikailovhotel.shared.core.domain.entity.RoomList
 import java.util.Locale
 import kotlin.math.max
 
-class RoomsAdapter() : RecyclerView.Adapter<RoomsAdapter.RoomViewHolder>() {
+class RoomsAdapter(private val navigateToBooking: () -> Unit) :
+    RecyclerView.Adapter<RoomsAdapter.RoomViewHolder>() {
 
     var storageList: RoomList = RoomList(emptyList())
         set(value) {
@@ -58,6 +59,9 @@ class RoomsAdapter() : RecyclerView.Adapter<RoomsAdapter.RoomViewHolder>() {
                 String.format(Locale.FRANCE, "%,d", hotelFeature.price)
             )
             pricePer.text = hotelFeature.price_per
+            chooseRoom.setOnClickListener {
+                navigateToBooking()
+            }
         }
     }
 
@@ -85,7 +89,7 @@ class RoomsAdapter() : RecyclerView.Adapter<RoomsAdapter.RoomViewHolder>() {
             applicationAdapter.storageList = data
             adapter = applicationAdapter
             val layoutManager =
-                GridLayoutManager(itemView.context, max(1,data.size - 1))
+                GridLayoutManager(itemView.context, max(1, data.size - 1))
             layoutManager.orientation = GridLayoutManager.HORIZONTAL
             this.layoutManager = layoutManager
 

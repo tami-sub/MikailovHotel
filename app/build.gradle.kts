@@ -78,6 +78,7 @@ dependencies {
     implementation(project(":shared:core"))
     implementation(project(":feature:hotel"))
     implementation(project(":feature:room"))
+    implementation(project(":feature:booking"))
     implementation(project(":feature:paid"))
 
 }

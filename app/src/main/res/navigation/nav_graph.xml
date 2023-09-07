@@ -17,8 +17,29 @@
     </fragment>
     <fragment
         android:id="@+id/roomsFragment"
-        android:name="com.example.mikailovhotel.feature.room.ui.RoomsFragment" />
+        android:name="com.example.mikailovhotel.feature.room.ui.RoomsFragment" >
+        <action
+            android:id="@+id/action_roomsFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/paidFragment"
-        android:name="com.example.mikailovhotel.feature.paid.ui.PaidFragment" />
+        android:name="com.example.mikailovhotel.feature.paid.ui.PaidFragment"
+        android:label="Заказ оплачен" />
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.example.mikailovhotel.feature.booking.ui.BookingFragment"
+        android:label="Бронирование" >
+        <action
+            android:id="@+id/action_bookingFragment_to_paidFragment"
+            app:destination="@id/paidFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 </navigation>

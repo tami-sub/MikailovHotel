@@ -17,6 +17,7 @@ style booking_data_hint
 style colorful_plain_text
 style custom_title
 style disabled_button
+style final_price
 style golden_text
 style more_info_text
 style nested_horizontal_info_text

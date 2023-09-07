@@ -1,6 +1,7 @@
 package com.example.mikailovhotel.shared.core.data.repository
 
 import com.example.mikailovhotel.shared.core.data.remote.RemoteApi
+import com.example.mikailovhotel.shared.core.domain.entity.Booking
 import com.example.mikailovhotel.shared.core.domain.entity.Hotel
 import com.example.mikailovhotel.shared.core.domain.entity.RoomList
 import com.example.mikailovhotel.shared.core.domain.repository.HotelRepository
@@ -13,5 +14,9 @@ class HotelRepositoryImpl @Inject constructor(private val api: RemoteApi) : Hote
 
     override suspend fun getRoomList(): Result<RoomList> {
         return api.getRoomList()
+    }
+
+    override suspend fun getBookingInfo(): Result<Booking>{
+        return api.getBookingInfo()
     }
 }

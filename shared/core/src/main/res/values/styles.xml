@@ -26,6 +26,10 @@
         <item name="height">29dp</item>
     </style>
 
+    <style name="final_price" parent="address">
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <style name="upper_case_price" parent="text">
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/black</item>

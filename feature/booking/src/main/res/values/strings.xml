@@ -12,4 +12,25 @@
     <string name="customer_info">Информация о покупателе</string>
     <string name="phone_number_hint">Номер телефона</string>
     <string name="email">Почта</string>
+    <string name="date_placeholder">%1$s - %2$s</string>
+    <string name="name_hint">Имя</string>
+    <string name="surname_hint">Фамилия</string>
+    <string name="birth_day_hint">День рождения</string>
+    <string name="citizenship_hint">Гражданство</string>
+    <string name="passport_number_hint">Номер загранпаспорта</string>
+    <string name="passport_expiration_date_hint">Срок действия загранпаспорта</string>
+    <string name="add_tourist">Добавить туриста</string>
+    <string-array name="serial_tourist_number">
+        <item>Первый турист</item>
+        <item>Второй турист</item>
+        <item>Третий турист</item>
+        <item>Четвёртый турист</item>
+        <item>Пятый турист</item>
+    </string-array>
+    <string name="buy_button_placeholder">Оплатить %1$s ₽</string>
+    <string name="tour">Тур</string>
+    <string name="fuel_hint">Топливный сбор</string>
+    <string name="service_hint">Сервисный сбор</string>
+    <string name="price_hint">К оплате</string>
+    <string name="price_placeholder">%1$s ₽</string>
 </resources>
