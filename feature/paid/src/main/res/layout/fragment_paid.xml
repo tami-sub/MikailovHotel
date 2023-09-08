@@ -27,34 +27,35 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/order_accepted_text"
         style="@style/custom_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Ваш заказ принят в работу"
+        android:text="@string/order_accepted"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <TextView
+        android:id="@+id/confirmation_text"
         style="@style/pale_plain_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal|top"
-        android:text="Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление."
+        android:text="@string/confirmation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/order_accepted_text" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/apply_button"
+        android:id="@+id/super_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="16dp"
-        android:text="Супер"
+        android:text="@string/super_button"
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

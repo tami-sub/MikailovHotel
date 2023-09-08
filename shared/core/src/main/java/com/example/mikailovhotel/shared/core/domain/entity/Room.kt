@@ -1,10 +1,14 @@
 package com.example.mikailovhotel.shared.core.domain.entity
 
+import com.google.gson.annotations.SerializedName
+
 data class Room(
     val id: Int,
-    val image_urls: List<String>,
+    @SerializedName("image_urls")
+    val imageUrls: List<String>,
     val name: String,
     val peculiarities: List<String>,
     val price: Int,
-    val price_per: String
+    @SerializedName("price_per")
+    val pricePer: String
 )

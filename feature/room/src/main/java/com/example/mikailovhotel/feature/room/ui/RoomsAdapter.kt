@@ -47,7 +47,7 @@ class RoomsAdapter(private val navigateToBooking: () -> Unit) :
         fun bind(hotelFeature: Room) = with(binding) {
             name.text = hotelFeature.name
             imageSlider.setImageList(
-                hotelFeature.image_urls.map { SlideModel(it) }, ScaleTypes.FIT
+                hotelFeature.imageUrls.map { SlideModel(it) }, ScaleTypes.FIT
             )
             showRecyclerView(
                 recyclerViewRoomFeatures,
@@ -58,7 +58,7 @@ class RoomsAdapter(private val navigateToBooking: () -> Unit) :
                 R.string.price_room_placeholder,
                 String.format(Locale.FRANCE, "%,d", hotelFeature.price)
             )
-            pricePer.text = hotelFeature.price_per
+            pricePer.text = hotelFeature.pricePer
             chooseRoom.setOnClickListener {
                 navigateToBooking()
             }

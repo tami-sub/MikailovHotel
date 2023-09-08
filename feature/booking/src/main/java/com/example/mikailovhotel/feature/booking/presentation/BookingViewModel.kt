@@ -50,7 +50,7 @@ class BookingViewModel @Inject constructor(
                         R.string.price_placeholder, String.format(
                             Locale.FRANCE,
                             "%,d",
-                            data.tour_price + data.fuel_charge + data.service_charge
+                            data.tourPrice + data.fuelCharge + data.serviceCharge
                         )
                     )
                     val bookingInfo = mutableListOf(
@@ -58,15 +58,15 @@ class BookingViewModel @Inject constructor(
                             application.getString(
                                 com.example.mikailovhotel.shared.core.R.string.golden_score,
                                 data.horating,
-                                data.rating_name
-                            ), data.hotel_name, data.hotel_adress
+                                data.ratingName
+                            ), data.hotelName, data.hotelAddress
                         ),
                         BookingDataItem(
-                            data.departure, data.arrival_country, application.getString(
-                                R.string.date_placeholder, data.tour_date_start, data.tour_date_stop
+                            data.departure, data.arrivalCountry, application.getString(
+                                R.string.date_placeholder, data.tourDateStart, data.tourDateStop
                             ), application.getString(
-                                R.string.nights, data.number_of_nights
-                            ), data.hotel_name, data.room, data.nutrition
+                                R.string.nights, data.numberOfNights
+                            ), data.hotelName, data.room, data.nutrition
                         ),
                         CustomerInfoItem(),
                         TouristInfoItem(application.resources.getStringArray(R.array.serial_tourist_number)[0]),
@@ -74,13 +74,13 @@ class BookingViewModel @Inject constructor(
                         PriceInfoItem(
                             application.getString(
                                 R.string.price_placeholder,
-                                String.format(Locale.FRANCE, "%,d", data.tour_price)
+                                String.format(Locale.FRANCE, "%,d", data.tourPrice)
                             ), application.getString(
                                 R.string.price_placeholder,
-                                String.format(Locale.FRANCE, "%,d", data.fuel_charge)
+                                String.format(Locale.FRANCE, "%,d", data.fuelCharge)
                             ), application.getString(
                                 R.string.price_placeholder,
-                                String.format(Locale.FRANCE, "%,d", data.service_charge)
+                                String.format(Locale.FRANCE, "%,d", data.serviceCharge)
                             ), finalPrice
                         ),
                         BuyButtonItem(finalPrice)

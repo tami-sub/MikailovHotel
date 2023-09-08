@@ -1,7 +1,0 @@
-com.example.mikailovhotel.feature.paid
-drawable grey_circle
-drawable party_pooper_full_size
-id apply_button
-id textView2
-id view
-layout fragment_paid

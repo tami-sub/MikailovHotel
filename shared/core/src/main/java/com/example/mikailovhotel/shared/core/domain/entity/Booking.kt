@@ -1,19 +1,31 @@
 package com.example.mikailovhotel.shared.core.domain.entity
 
+import com.google.gson.annotations.SerializedName
+
 data class Booking(
-    val arrival_country: String,
+    @SerializedName("arrival_country")
+    val arrivalCountry: String,
     val departure: String,
-    val fuel_charge: Int,
+    @SerializedName("fuel_charge")
+    val fuelCharge: Int,
     val horating: Int,
-    val hotel_adress: String,
-    val hotel_name: String,
+    @SerializedName("hotel_adress")
+    val hotelAddress: String,
+    @SerializedName("hotel_name")
+    val hotelName: String,
     val id: Int,
-    val number_of_nights: Int,
+    @SerializedName("number_of_nights")
+    val numberOfNights: Int,
     val nutrition: String,
-    val rating_name: String,
+    @SerializedName("rating_name")
+    val ratingName: String,
     val room: String,
-    val service_charge: Int,
-    val tour_date_start: String,
-    val tour_date_stop: String,
-    val tour_price: Int
+    @SerializedName("service_charge")
+    val serviceCharge: Int,
+    @SerializedName("tour_date_start")
+    val tourDateStart: String,
+    @SerializedName("tour_date_stop")
+    val tourDateStop: String,
+    @SerializedName("tour_price")
+    val tourPrice: Int
 )
