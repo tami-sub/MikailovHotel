@@ -1,7 +1,14 @@
 com.example.mikailovhotel.shared.core
+attr allowed_chars
+attr char_representation
+attr denied_chars
+attr enable_ime_action
+attr keep_hint
+attr mask
 color background_fragment_container_color
 color black
 color disabled_button_box_color
+color error_background
 color golden_box_color
 color golden_text
 color white
@@ -13,10 +20,11 @@ id progress_bar
 string golden_score
 string retry
 style address
-style booking_data_hint
+style booking_data
 style colorful_plain_text
 style custom_title
 style disabled_button
+style error_size
 style final_price
 style golden_text
 style more_info_text
@@ -26,3 +34,4 @@ style text
 style text_input_layout_customer_info
 style toolbar
 style upper_case_price
+styleable MaskedEditText allowed_chars char_representation denied_chars enable_ime_action keep_hint mask

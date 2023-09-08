@@ -2,6 +2,8 @@ package com.example.mikailovhotel.feature.booking.ui
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import androidx.core.view.children
 import androidx.lifecycle.ViewModelProvider
 import com.example.mikailovhotel.component.navigation.navigate
 import com.example.mikailovhotel.feature.booking.R
@@ -74,7 +76,9 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>(FragmentBookingBind
 
     private fun showRecyclerView(dataList: MutableList<ListItem>) {
         binding.recyclerViewBooking.apply {
-            val applicationAdapter = BookingAdapter { navigate(R.id.action_bookingFragment_to_paidFragment) }
+            val applicationAdapter = BookingAdapter {
+                navigate(R.id.action_bookingFragment_to_paidFragment)
+            }
             applicationAdapter.items = dataList
             adapter = applicationAdapter
             (adapter as BookingAdapter).setOnItemClickListener(object :

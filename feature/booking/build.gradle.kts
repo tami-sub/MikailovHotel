@@ -56,6 +56,7 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("com.gitee.chinasoft_ohos:MaskedEditText:1.0.2")
     kapt("com.google.dagger:dagger-compiler:2.44")
     kapt("com.google.dagger:dagger-android-processor:2.44")
 

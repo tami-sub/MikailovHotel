@@ -3,6 +3,7 @@
     <color name="background_fragment_container_color">#F6F6F9</color>
     <color name="black">#FF000000</color>
     <color name="disabled_button_box_color">#FBFBFC</color>
+    <color name="error_background">#26EB5757</color>
     <color name="golden_box_color">#33FFC700</color>
     <color name="golden_text">#FFA800</color>
     <color name="white">#FFFFFFFF</color>
@@ -13,8 +14,8 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#0D72FF</item>
     </style>
-    <style name="booking_data_hint" parent="pale_plain_text">
-        <item name="android:layout_marginBottom">16dp</item>
+    <style name="booking_data" parent="colorful_plain_text">
+        <item name="android:layout_marginTop">16dp</item>
     </style>
     <style name="colorful_plain_text" parent="text">
         <item name="android:textSize">16sp</item>
@@ -28,6 +29,9 @@
         <item name="android:backgroundTint">@color/disabled_button_box_color</item>
         <item name="android:textColor">@color/black</item>
         <item name="cornerRadius">5dp</item>
+    </style>
+    <style name="error_size">
+        <item name="android:textSize">0sp</item>
     </style>
     <style name="final_price" parent="address">
         <item name="android:textSize">16sp</item>
@@ -69,4 +73,12 @@
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
+    <declare-styleable name="MaskedEditText">
+        <attr format="string" name="mask"/>
+        <attr format="string" name="allowed_chars"/>
+        <attr format="boolean" name="enable_ime_action"/>
+        <attr format="string" name="denied_chars"/>
+        <attr format="string" name="char_representation"/>
+        <attr format="boolean" name="keep_hint"/>
+    </declare-styleable>
 </resources>

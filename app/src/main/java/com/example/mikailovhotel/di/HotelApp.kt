@@ -12,7 +12,11 @@ class HotelApp : Application(), HasAndroidInjector {
     @Inject
     lateinit var injector: DispatchingAndroidInjector<Any>
 
-    val appComponent =  DaggerApplicationComponent.factory().create(this).inject(this)
+    val appComponent =  DaggerApplicationComponent.factory().create(createAppModule()).inject(this)
 
     override fun androidInjector(): AndroidInjector<Any> = injector
+
+    private fun createAppModule(): AppModule {
+        return AppModule(this)
+    }
 }

@@ -1,6 +1,6 @@
 package com.example.mikailovhotel.feature.booking.presentation
 
-import android.content.Context
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,7 +24,7 @@ import java.util.Locale
 import javax.inject.Inject
 
 class BookingViewModel @Inject constructor(
-    private val bookingUseCase: BookingUseCase, private val context: Context
+    private val bookingUseCase: BookingUseCase, private val application: Application
 ) : ViewModel() {
     private val _state: MutableLiveData<BookingState> = MutableLiveData<BookingState>()
     val state: LiveData<BookingState> = _state
@@ -46,7 +46,7 @@ class BookingViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             bookingUseCase.invoke().onSuccess { data ->
                 withContext(Dispatchers.Main) {
-                    val finalPrice = context.getString(
+                    val finalPrice = application.getString(
                         R.string.price_placeholder, String.format(
                             Locale.FRANCE,
                             "%,d",
@@ -54,29 +54,31 @@ class BookingViewModel @Inject constructor(
                         )
                     )
                     val bookingInfo = mutableListOf(
-                        HotelInfoItem(data.rating_name, data.hotel_name, data.hotel_adress),
+                        HotelInfoItem(
+                            application.getString(
+                                com.example.mikailovhotel.shared.core.R.string.golden_score,
+                                data.horating,
+                                data.rating_name
+                            ), data.hotel_name, data.hotel_adress
+                        ),
                         BookingDataItem(
-                            data.departure,
-                            data.arrival_country,
-                            context.getString(
+                            data.departure, data.arrival_country, application.getString(
                                 R.string.date_placeholder, data.tour_date_start, data.tour_date_stop
-                            ),
-                            data.number_of_nights.toString(),
-                            data.hotel_name,
-                            data.room,
-                            data.nutrition
+                            ), application.getString(
+                                R.string.nights, data.number_of_nights
+                            ), data.hotel_name, data.room, data.nutrition
                         ),
                         CustomerInfoItem(),
-                        TouristInfoItem(context.resources.getStringArray(R.array.serial_tourist_number)[0]),
+                        TouristInfoItem(application.resources.getStringArray(R.array.serial_tourist_number)[0]),
                         AddTouristItem(),
                         PriceInfoItem(
-                            context.getString(
+                            application.getString(
                                 R.string.price_placeholder,
                                 String.format(Locale.FRANCE, "%,d", data.tour_price)
-                            ), context.getString(
+                            ), application.getString(
                                 R.string.price_placeholder,
                                 String.format(Locale.FRANCE, "%,d", data.fuel_charge)
-                            ), context.getString(
+                            ), application.getString(
                                 R.string.price_placeholder,
                                 String.format(Locale.FRANCE, "%,d", data.service_charge)
                             ), finalPrice

@@ -7,153 +7,156 @@
     android:layout_marginTop="8dp"
     android:background="@drawable/layout_background"
     android:paddingHorizontal="16dp"
-    android:paddingTop="16dp">
+    android:paddingBottom="16dp">
 
     <TextView
         android:id="@+id/departure_from_hint"
-        style="@style/booking_data_hint"
+        style="@style/pale_plain_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/departure_from"
-        app:layout_constraintBottom_toTopOf="@+id/county_hint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/departure_from" />
 
     <TextView
         android:id="@+id/departure_from"
-        style="@style/colorful_plain_text"
-        android:layout_width="wrap_content"
+        style="@style/booking_data"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/departure_from_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/departure_from_hint"
-        tools:text="JOKA BOKA MOMENT" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/name" />
 
 
     <TextView
         android:id="@+id/county_hint"
-        style="@style/booking_data_hint"
+        style="@style/pale_plain_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/country_hint"
-        app:layout_constraintBottom_toTopOf="@+id/date_hint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/departure_from_hint" />
+        app:layout_constraintTop_toTopOf="@+id/county" />
 
     <TextView
         android:id="@+id/county"
-        style="@style/colorful_plain_text"
-        android:layout_width="wrap_content"
+        style="@style/booking_data"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/county_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/county_hint"
-        tools:text="JOKA BOKA MOMENT" />
+        app:layout_constraintTop_toBottomOf="@+id/departure_from"
+        tools:text="@string/name" />
 
 
     <TextView
         android:id="@+id/date_hint"
-        style="@style/booking_data_hint"
+        style="@style/pale_plain_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/date_hint"
-        app:layout_constraintBottom_toTopOf="@+id/duration_hint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/county_hint" />
+        app:layout_constraintTop_toTopOf="@+id/date" />
 
     <TextView
         android:id="@+id/date"
-        style="@style/colorful_plain_text"
-        android:layout_width="wrap_content"
+        style="@style/booking_data"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/date_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/date_hint"
-        tools:text="JOKA BOKA MOMENT" />
+        app:layout_constraintTop_toBottomOf="@+id/county"
+        tools:text="@string/name" />
 
 
     <TextView
         android:id="@+id/duration_hint"
-        style="@style/booking_data_hint"
+        style="@style/pale_plain_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/duration_hint"
-        app:layout_constraintBottom_toTopOf="@+id/hotel_hint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_hint" />
+        app:layout_constraintTop_toTopOf="@+id/duration" />
 
     <TextView
         android:id="@+id/duration"
-        style="@style/colorful_plain_text"
-        android:layout_width="wrap_content"
+        style="@style/booking_data"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/duration_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/duration_hint"
-        tools:text="JOKA BOKA MOMENT" />
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        tools:text="@string/name" />
 
 
     <TextView
         android:id="@+id/hotel_hint"
-        style="@style/booking_data_hint"
+        style="@style/pale_plain_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hotel_hint"
-        app:layout_constraintBottom_toTopOf="@+id/room_hint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/duration_hint" />
+        app:layout_constraintTop_toTopOf="@+id/hotel" />
+
 
     <TextView
         android:id="@+id/hotel"
-        style="@style/colorful_plain_text"
-        android:layout_width="wrap_content"
+        style="@style/booking_data"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/hotel_hint"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/hotel_hint"
-        tools:text="JOKA BOKA MOMENT" />
-
+        app:layout_constraintTop_toBottomOf="@+id/duration"
+        tools:text="@string/name" />
 
     <TextView
         android:id="@+id/room_hint"
-        style="@style/booking_data_hint"
+        style="@style/pale_plain_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/room_hint"
-        app:layout_constraintBottom_toTopOf="@+id/meal_hint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hotel_hint" />
+        app:layout_constraintTop_toTopOf="@+id/room" />
+
 
     <TextView
         android:id="@+id/room"
-        style="@style/colorful_plain_text"
-        android:layout_width="wrap_content"
+        style="@style/booking_data"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/room_hint"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/room_hint"
-        tools:text="JOKA BOKA MOMENT" />
-
+        app:layout_constraintTop_toBottomOf="@+id/hotel"
+        tools:text="@string/name" />
 
     <TextView
         android:id="@+id/meal_hint"
-        style="@style/booking_data_hint"
+        style="@style/pale_plain_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/meal_hint"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/room_hint" />
+        app:layout_constraintTop_toTopOf="@+id/meal" />
 
     <TextView
         android:id="@+id/meal"
-        style="@style/colorful_plain_text"
-        android:layout_width="wrap_content"
+        style="@style/booking_data"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/meal_hint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/meal_hint"
-        tools:text="JOKA BOKA MOMENT" />
+        app:layout_constraintTop_toBottomOf="@+id/room"
+        tools:text="@string/name" />
 
 
     <androidx.constraintlayout.widget.Guideline

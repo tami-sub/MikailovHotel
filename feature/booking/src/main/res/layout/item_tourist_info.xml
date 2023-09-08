@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginTop="8dp"
     android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
     android:background="@drawable/layout_background"
     android:paddingHorizontal="16dp"
     android:paddingVertical="16dp">
@@ -44,10 +44,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="@string/name_hint">
+            android:hint="@string/name_hint"
+            app:errorTextAppearance="@style/error_size">
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:text="@string/name_hint" />
@@ -59,10 +64,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="@string/surname_hint">
+            android:hint="@string/surname_hint"
+            app:errorTextAppearance="@style/error_size">
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:id="@+id/surname"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:text="@string/surname_hint" />
@@ -74,10 +84,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="@string/birth_day_hint">
+            android:hint="@string/birth_day_hint"
+            app:errorTextAppearance="@style/error_size">
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="date"
+                android:id="@+id/birth_day"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:text="@string/birth_day_hint" />
@@ -89,10 +104,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="@string/citizenship_hint">
+            android:hint="@string/citizenship_hint"
+            app:errorTextAppearance="@style/error_size">
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:id="@+id/citizenship"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:text="@string/citizenship_hint" />
@@ -104,10 +124,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="@string/passport_number_hint">
+            android:hint="@string/passport_number_hint"
+            app:errorTextAppearance="@style/error_size">
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="10"
+                android:maxLines="1"
+                android:id="@+id/passport_number"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:text="@string/passport_number_hint" />
@@ -119,12 +144,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="@string/passport_expiration_date_hint">
+            android:hint="@string/passport_expiration_date_hint"
+            app:errorTextAppearance="@style/error_size">
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="date"
+                android:id="@+id/passport_expiration_date"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:imeOptions="actionDone"
                 tools:text="@string/passport_expiration_date_hint" />
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
