@@ -2,13 +2,10 @@ package com.example.mikailovhotel.feature.booking.ui
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import androidx.core.view.children
 import androidx.lifecycle.ViewModelProvider
 import com.example.mikailovhotel.component.navigation.navigate
 import com.example.mikailovhotel.feature.booking.R
 import com.example.mikailovhotel.feature.booking.databinding.FragmentBookingBinding
-import com.example.mikailovhotel.feature.booking.domain.BuyButtonItem
 import com.example.mikailovhotel.feature.booking.domain.ListItem
 import com.example.mikailovhotel.feature.booking.domain.TouristInfoItem
 import com.example.mikailovhotel.feature.booking.presentation.BookingState
@@ -65,8 +62,6 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>(FragmentBookingBind
                     }
                 }
             }
-
-            is BookingState.Clear -> {}
         }
     }
 

@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.mikailovhotel.feature.booking.presentation.BookingViewModel
 import com.example.mikailovhotel.feature.hotel.presentation.HotelViewModel
+import com.example.mikailovhotel.feature.paid.ui.PaidViewModel
 import com.example.mikailovhotel.feature.room.presentation.RoomsViewModel
 import com.example.mikailovhotel.shared.core.presentation.ViewModelFactory
 import dagger.Binds
@@ -29,4 +30,9 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(BookingViewModel::class)
     fun bookingViewModel(viewModel: BookingViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PaidViewModel::class)
+    fun paidViewModel(viewModel: PaidViewModel): ViewModel
 }

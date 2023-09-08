@@ -64,8 +64,6 @@ class RoomsFragment : BaseFragment<FragmentRoomsBinding>(FragmentRoomsBinding::i
                     }
                 }
             }
-
-            is RoomsState.Clear -> {}
         }
     }
 
@@ -75,7 +73,8 @@ class RoomsFragment : BaseFragment<FragmentRoomsBinding>(FragmentRoomsBinding::i
 
     private fun showRecyclerView(data: RoomList) {
         binding.recyclerViewRooms.apply {
-            val applicationAdapter = RoomsAdapter { navigate(R.id.action_roomsFragment_to_bookingFragment) }
+            val applicationAdapter =
+                RoomsAdapter { navigate(R.id.action_roomsFragment_to_bookingFragment) }
             applicationAdapter.storageList = data
             adapter = applicationAdapter
         }

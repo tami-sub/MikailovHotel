@@ -7,5 +7,4 @@ sealed interface HotelState {
     object Loading : HotelState
     data class Success(val hotel: Hotel, val imageList: ArrayList<SlideModel>) : HotelState
     data class Error(val exception: Throwable) : HotelState
-    object Clear : HotelState
 }

@@ -2,7 +2,7 @@ package com.example.mikailovhotel.feature.hotel.presentation;
 
 import java.lang.System;
 
-@kotlin.Metadata(mv = {1, 8, 0}, k = 1, d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bv\u0018\u00002\u00020\u0001:\u0004\u0002\u0003\u0004\u0005\u0082\u0001\u0004\u0006\u0007\b\t\u00a8\u0006\n"}, d2 = {"Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState;", "", "Clear", "Error", "Loading", "Success", "Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState$Clear;", "Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState$Error;", "Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState$Loading;", "Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState$Success;", "hotel_debug"})
+@kotlin.Metadata(mv = {1, 8, 0}, k = 1, d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bv\u0018\u00002\u00020\u0001:\u0003\u0002\u0003\u0004\u0082\u0001\u0003\u0005\u0006\u0007\u00a8\u0006\b"}, d2 = {"Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState;", "", "Error", "Loading", "Success", "Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState$Error;", "Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState$Loading;", "Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState$Success;", "hotel_debug"})
 public abstract interface HotelState {
     
     @kotlin.Metadata(mv = {1, 8, 0}, k = 1, d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u00c6\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002\u00a2\u0006\u0002\u0010\u0002\u00a8\u0006\u0003"}, d2 = {"Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState$Loading;", "Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState;", "()V", "hotel_debug"})
@@ -114,16 +114,6 @@ public abstract interface HotelState {
         @org.jetbrains.annotations.NotNull
         public final java.lang.Throwable getException() {
             return null;
-        }
-    }
-    
-    @kotlin.Metadata(mv = {1, 8, 0}, k = 1, d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u00c6\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002\u00a2\u0006\u0002\u0010\u0002\u00a8\u0006\u0003"}, d2 = {"Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState$Clear;", "Lcom/example/mikailovhotel/feature/hotel/presentation/HotelState;", "()V", "hotel_debug"})
-    public static final class Clear implements com.example.mikailovhotel.feature.hotel.presentation.HotelState {
-        @org.jetbrains.annotations.NotNull
-        public static final com.example.mikailovhotel.feature.hotel.presentation.HotelState.Clear INSTANCE = null;
-        
-        private Clear() {
-            super();
         }
     }
 }

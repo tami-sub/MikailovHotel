@@ -6,5 +6,4 @@ sealed interface BookingState {
     object Loading : BookingState
     data class Success(val bookingInfo: MutableList<ListItem>) : BookingState
     data class Error(val exception: Throwable) : BookingState
-    object Clear : BookingState
 }

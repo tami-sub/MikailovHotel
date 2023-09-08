@@ -84,8 +84,6 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
                     }
                 }
             }
-
-            is HotelState.Clear -> {}
         }
     }
 
