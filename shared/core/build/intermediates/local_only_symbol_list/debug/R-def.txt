@@ -1,0 +1,38 @@
+R_DEF: Internal format may change without notice
+local
+attr? allowed_chars
+attr? char_representation
+attr? denied_chars
+attr? enable_ime_action
+attr? keep_hint
+attr? mask
+color background_fragment_container_color
+color black
+color disabled_button_box_color
+color error_background
+color golden_box_color
+color golden_text
+color white
+drawable active_button
+drawable golden_box
+drawable grey_box
+drawable layout_background
+id progress_bar
+string golden_score
+string retry
+style address
+style booking_data
+style colorful_plain_text
+style custom_title
+style disabled_button
+style error_size
+style final_price
+style golden_text
+style more_info_text
+style nested_horizontal_info_text
+style pale_plain_text
+style text
+style text_input_layout_customer_info
+style toolbar
+style upper_case_price
+styleable MaskedEditText mask allowed_chars enable_ime_action denied_chars char_representation keep_hint

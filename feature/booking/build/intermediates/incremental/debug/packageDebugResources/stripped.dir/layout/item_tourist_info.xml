@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/layout_background"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="16dp">
+
+    <TextView
+        android:id="@+id/tourist"
+        style="@style/custom_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Первый турист" />
+
+    <ImageButton
+        android:id="@+id/expand_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/arrow_background"
+        android:src="@drawable/arrow_closed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/content_expandable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tourist">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_box"
+            style="@style/text_input_layout_customer_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/name_hint"
+            app:errorTextAppearance="@style/error_size">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:text="@string/name_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/surname_box"
+            style="@style/text_input_layout_customer_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/surname_hint"
+            app:errorTextAppearance="@style/error_size">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:id="@+id/surname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:text="@string/surname_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/birth_day_box"
+            style="@style/text_input_layout_customer_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/birth_day_hint"
+            app:errorTextAppearance="@style/error_size">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="date"
+                android:id="@+id/birth_day"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:text="@string/birth_day_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/citizenship_box"
+            style="@style/text_input_layout_customer_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/citizenship_hint"
+            app:errorTextAppearance="@style/error_size">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:id="@+id/citizenship"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:text="@string/citizenship_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passport_number_box"
+            style="@style/text_input_layout_customer_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/passport_number_hint"
+            app:errorTextAppearance="@style/error_size">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="10"
+                android:maxLines="1"
+                android:id="@+id/passport_number"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:text="@string/passport_number_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passport_expiration_date_box"
+            style="@style/text_input_layout_customer_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/passport_expiration_date_hint"
+            app:errorTextAppearance="@style/error_size">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="30"
+                android:maxLines="1"
+                android:inputType="date"
+                android:id="@+id/passport_expiration_date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"
+                tools:text="@string/passport_expiration_date_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>
