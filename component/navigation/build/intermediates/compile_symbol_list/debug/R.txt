@@ -1,1 +1,0 @@
-int id globalHost 0x0
