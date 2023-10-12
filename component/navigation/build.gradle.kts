@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.mikailovhotel.component.navigation"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
@@ -34,9 +34,9 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation(HotelDependencies.AndroidX.coreKtx)
 
     //navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+    implementation(HotelDependencies.AndroidX.Navigation.navigationFragmentKtx)
+    implementation(HotelDependencies.AndroidX.Navigation.navigationUiKtx)
 }

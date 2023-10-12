@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.mikailovhotel.feature.booking"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
@@ -34,39 +34,36 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(HotelDependencies.AndroidX.coreKtx)
+    implementation(HotelDependencies.AndroidX.appcompat)
+    implementation(HotelDependencies.Material.material)
+    implementation(HotelDependencies.AndroidX.constraintLayout)
 
     //livedata
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation(HotelDependencies.AndroidX.Lifecycle.livedata)
 
     //viewmodel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation(HotelDependencies.AndroidX.Lifecycle.viewmodel)
 
     //navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+    implementation(HotelDependencies.AndroidX.Navigation.navigationFragmentKtx)
+    implementation(HotelDependencies.AndroidX.Navigation.navigationUiKtx)
 
     //dagger
-    implementation("com.google.dagger:dagger:2.44")
-    implementation("com.google.dagger:dagger-android:2.44")
-    implementation("com.google.dagger:dagger-android-support:2.44")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
-    kapt("com.google.dagger:dagger-compiler:2.44")
-    kapt("com.google.dagger:dagger-android-processor:2.44")
+    implementation(HotelDependencies.DI.dagger)
+    implementation(HotelDependencies.DI.daggerAndroid)
+    implementation(HotelDependencies.DI.daggerAndroidSupport)
+    kapt(HotelDependencies.DI.daggerCompiler)
+    kapt(HotelDependencies.DI.daggerAndroidProcessor)
+
+    //swipe to refresh layout
+    implementation(HotelDependencies.SwipeToRefresh.swipeToRefreshLayout)
+
+    //AdapterDelegates
+    implementation(HotelDependencies.AdapterDelegates.adapterDelegates)
+    implementation(HotelDependencies.AdapterDelegates.adapterdelegatesViewBinding)
 
     //modules
     implementation(project(":shared:core"))
     implementation(project(":component:navigation"))
-
-    //swipe to refresh layout
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-
-    //AdapterDelegates
-    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.2")
-    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2")
 }

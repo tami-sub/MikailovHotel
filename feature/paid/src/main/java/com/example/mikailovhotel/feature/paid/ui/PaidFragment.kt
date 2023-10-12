@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.mikailovhotel.feature.paid.R
 import com.example.mikailovhotel.feature.paid.databinding.FragmentPaidBinding
+import com.example.mikailovhotel.feature.paid.presentation.PaidViewModel
 import com.example.mikailovhotel.shared.core.presentation.ViewModelFactory
 import com.example.mikailovhotel.shared.core.ui.BaseFragment
 import dagger.android.support.AndroidSupportInjection

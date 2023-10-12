@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.mikailovhotel.shared.core"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
@@ -35,20 +35,20 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation(HotelDependencies.AndroidX.coreKtx)
 
     //navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+    implementation(HotelDependencies.AndroidX.Navigation.navigationFragmentKtx)
+    implementation(HotelDependencies.AndroidX.Navigation.navigationUiKtx)
 
     //retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation (HotelDependencies.Retrofit.retrofit)
+    implementation (HotelDependencies.Retrofit.retrofitGsonConverter)
 
     //dagger
-    implementation ("com.google.dagger:dagger:2.44")
-    implementation ("com.google.dagger:dagger-android:2.44")
-    implementation ("com.google.dagger:dagger-android-support:2.44")
-    kapt ("com.google.dagger:dagger-compiler:2.44")
-    kapt ("com.google.dagger:dagger-android-processor:2.44")
+    implementation(HotelDependencies.DI.dagger)
+    implementation(HotelDependencies.DI.daggerAndroid)
+    implementation(HotelDependencies.DI.daggerAndroidSupport)
+    kapt(HotelDependencies.DI.daggerCompiler)
+    kapt(HotelDependencies.DI.daggerAndroidProcessor)
 }

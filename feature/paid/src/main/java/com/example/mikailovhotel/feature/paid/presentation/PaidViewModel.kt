@@ -1,4 +1,4 @@
-package com.example.mikailovhotel.feature.paid.ui
+package com.example.mikailovhotel.feature.paid.presentation
 
 import android.app.Application
 import androidx.lifecycle.LiveData
