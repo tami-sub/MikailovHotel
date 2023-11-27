@@ -47,11 +47,11 @@ class RoomsAdapter(private val navigateToBooking: () -> Unit) :
         fun bind(hotelFeature: Room) = with(binding) {
             name.text = hotelFeature.name
             imageSlider.setImageList(
-                hotelFeature.imageUrls.map { SlideModel(it) }, ScaleTypes.FIT
+                hotelFeature.imageUrls.map{ it.url }.map { SlideModel(it) }, ScaleTypes.FIT
             )
             showRecyclerView(
                 recyclerViewRoomFeatures,
-                hotelFeature.peculiarities,
+                hotelFeature.peculiarities.map { it.description },
                 itemView
             )
             price.text = itemView.resources.getString(

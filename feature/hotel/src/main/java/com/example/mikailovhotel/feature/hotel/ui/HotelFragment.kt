@@ -60,7 +60,7 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>(FragmentHotelBinding::i
                 hideProgressBar()
                 content.visibility = View.VISIBLE
                 imageSlider.setImageList(state.imageList, ScaleTypes.FIT)
-                showRecyclerView(state.hotel.aboutTheHotel.peculiarities)
+                showRecyclerView(state.hotel.aboutTheHotel.peculiarities.map { it.description })
                 goldenScore.text = getString(
                     com.example.mikailovhotel.shared.core.R.string.golden_score,
                     state.hotel.rating,

@@ -44,7 +44,8 @@ class BookingViewModel @Inject constructor(
     fun getBookingInfo() {
         _state.value = BookingState.Loading
         viewModelScope.launch(Dispatchers.IO) {
-            bookingUseCase.invoke().onSuccess { data ->
+            bookingUseCase.invoke().onSuccess { dataList ->
+                val data = dataList.first()
                 withContext(Dispatchers.Main) {
                     val finalPrice = application.getString(
                         R.string.price_placeholder, String.format(

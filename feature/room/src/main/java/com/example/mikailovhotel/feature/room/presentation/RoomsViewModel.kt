@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.mikailovhotel.shared.core.domain.entity.RoomList
 import com.example.mikailovhotel.shared.core.domain.usecase.RoomsListUseCase
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -35,7 +36,7 @@ class RoomsViewModel @Inject constructor(private val roomsListUseCase: RoomsList
         viewModelScope.launch(Dispatchers.IO) {
             roomsListUseCase.invoke().onSuccess { roomsList ->
                 withContext(Dispatchers.Main) {
-                    _state.value = RoomsState.Success(roomsList)
+                    _state.value = RoomsState.Success(RoomList(rooms = roomsList))
                 }
 
             }.onFailure {

@@ -1,5 +1,6 @@
 package com.example.mikailovhotel.feature.hotel.presentation
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -34,9 +35,11 @@ class HotelViewModel @Inject constructor(private val hotelUseCase: HotelUseCase)
     fun getHotelInfo() {
         _state.value = HotelState.Loading
         viewModelScope.launch(Dispatchers.IO) {
-            hotelUseCase.invoke().onSuccess { hotel ->
+            hotelUseCase.invoke().onSuccess { hotels ->
+                Log.d("hotelUseCase", "$hotels")
+                val hotel = hotels.first()
                 val imageList = ArrayList<SlideModel>()
-                hotel.imageUrls.mapTo(imageList) { SlideModel(it) }
+                hotel.imageUrls.map { it.url }.mapTo(imageList) { SlideModel(it) }
                 withContext(Dispatchers.Main) {
                     _state.value = HotelState.Success(hotel, imageList)
                 }

@@ -2,6 +2,7 @@ package com.example.mikailovhotel.shared.core.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -67,6 +68,7 @@ abstract class BaseFragment<VB : ViewBinding>(
     protected abstract fun injectDependencies()
 
     protected open fun showErrorSnackbar(message: String, invoke: () -> Unit) {
+        Log.e("ErrorSnackbar", message)
         errorSnackbar = Snackbar.make(requireView(), message, Snackbar.LENGTH_INDEFINITE)
         errorSnackbar?.setAction(getString(R.string.retry)) {
             try {

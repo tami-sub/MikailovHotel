@@ -3,19 +3,22 @@ package com.example.mikailovhotel.shared.core.domain.entity
 import com.google.gson.annotations.SerializedName
 
 data class Hotel(
-    @SerializedName("about_the_hotel")
+    @SerializedName("AboutTheHotels")
     val aboutTheHotel: AboutTheHotel,
-    @SerializedName("adress")
+    @SerializedName("Address")
     val address: String,
+    @SerializedName("HotelsId")
     val id: Int,
-    @SerializedName("image_urls")
-    val imageUrls: List<String>,
-    @SerializedName("minimal_price")
+    @SerializedName("HotelsImageUrls")
+    val imageUrls: List<HotelImageUrl>,
+    @SerializedName("MinimalPrice")
     val minimalPrice: Int,
+    @SerializedName("Name")
     val name: String,
-    @SerializedName("price_for_it")
+    @SerializedName("PriceForIt")
     val priceForIt: String,
+    @SerializedName("Rating")
     val rating: Int,
-    @SerializedName("rating_name")
+    @SerializedName("RatingName")
     val ratingName: String
 )
