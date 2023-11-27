@@ -24,10 +24,10 @@ android {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://run.mocky.io/v3/\"")
+            buildConfigField("String", "BASE_URL", "\"https://a949-91-108-29-103.ngrok-free.app/\"")
         }
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://run.mocky.io/v3/\"")
+            buildConfigField("String", "BASE_URL", "\"https://a949-91-108-29-103.ngrok-free.app/\"")
         }
     }
     compileOptions {
